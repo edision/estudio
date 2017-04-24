@@ -6,7 +6,8 @@
   "author": "edision <boywujch@163.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "cross-env NODE_ENV=development nodemon server.js"
+    "start:dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "cross-env nodemon server.js"
   },
   "dependencies": {
     "koa": "^2.2.0",
