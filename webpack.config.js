@@ -30,10 +30,11 @@ if (debug) {
 
 module.exports = {
     entry: debug ? [
+        'babel-polyfill',
         'react-hot-loader/patch',
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
         './src/index.js'
-    ]:"./src/index.js" ,
+    ]:['babel-polyfill',"./src/index.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js?qtag=[hash:8]",

@@ -12,8 +12,12 @@ if (isDev) {
     app.use(webpackMiddleware({
         config: config,
         dev: {
-            publicPath: config.output.publicPath
+            publicPath: config.output.publicPath,
+            stats: {
+                colors: true
+            }
         }
+
     }));
     console.log("配置完成");
 } else {

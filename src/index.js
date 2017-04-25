@@ -7,7 +7,7 @@ import { Provider } from "mobx-react";
 import { AppContainer } from "react-hot-loader";
 
 import stores from "./stores";
-import App from "COMPONENTS/app";
+import App from "COMPONENTS/App";
 
 ReactDOM.render(
   <AppContainer>
@@ -16,8 +16,9 @@ ReactDOM.render(
         <App />
       </Router>
     </Provider>
-  </AppContainer>
-  , document.getElementById("app"));
+  </AppContainer>,
+  document.getElementById('app')
+);
 
 // Hot-reloading
 if (module.hot) {
