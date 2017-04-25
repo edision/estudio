@@ -7,13 +7,16 @@ if (isDev) {
     // 加载webpack中间件及配置
     console.log("配置开发环境...");
     const webpackMiddleware = require("koa-webpack");
-    const webpackConfig = require("./webpack.config");
-    const webpack = require("webpack");
+    const config = require("./webpack.config");
+    // const webpack = require("webpack");
     app.use(webpackMiddleware({
-      compiler: webpack(webpackConfig)
+        config: config,
+        dev: {
+            publicPath: config.output.publicPath
+        }
     }));
     console.log("配置完成");
-} else{
+} else {
     console.log("配置生产环境...");
     const favicon = require("koa-favicon");
     const serve = require("koa-static");

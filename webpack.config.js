@@ -12,8 +12,11 @@ var plugins = [new HtmlWebpackPlugin({
 
 if (debug) {
     plugins.push(new webpack.DefinePlugin({
-        DEBUG: true
-    }));
+            DEBUG: true
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
+    );
 } else {
     plugins.push(
         // new webpack.optimize.DedupePlugin(),
@@ -26,9 +29,13 @@ if (debug) {
 }
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: debug ? [
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        './src/index.js'
+    ]:"./src/index.js" ,
     output: {
-        path: path.resolve(__dirname, "public"),
+        path: path.resolve(__dirname, "dist"),
         filename: "bundle.js?qtag=[hash:8]",
         publicPath: "/"
     },
