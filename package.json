@@ -2,7 +2,12 @@
   "name": "estudio",
   "version": "0.0.2",
   "main": "index.js",
-  "repository": "https://github.com/edision/estudio.git",
+  "homepage": "https://github.com/edision/estudio",
+  "bugs": "https://github.com/edision/estudio/issues",
+  "repository": {
+    "url": "https://github.com/edision/estudio.git",
+    "type": "git"
+  },
   "author": "edision <boywujch@163.com>",
   "license": "MIT",
   "scripts": {
