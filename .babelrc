@@ -1,12 +1,16 @@
 {
     "presets": [
-        ["env", {
-            "modules": false
-        }], "react"
+        [
+            "env", {
+                "targets": {
+                    "node": true
+                }
+            }
+        ], "react"
     ],
     "plugins": [
         "react-hot-loader/babel",
         "transform-decorators-legacy",
-        "transform-class-properties"        
+        "transform-class-properties"
     ]
 }

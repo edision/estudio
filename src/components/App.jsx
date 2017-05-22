@@ -82,7 +82,7 @@ class App extends React.Component{
   }
 
   render(){
-    return <h2>Hello React!!!</h2>
+    return <h2>Hello React 中文!</h2>
   }
 }
 
