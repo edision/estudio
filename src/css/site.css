@@ -10,28 +10,58 @@ body{
     background: #EBEBEB;
 }
 
-.left-fixed-right-auto{
+.top{
+    position: absolute;
+    top: 0;
+    height: 52px;
+    width: 100%;       
+}
+
+.middle{
+    position: absolute;
+    top:52px;    
+    bottom:28px;
+    width: 100%;    
+    overflow: auto;
+    z-index: 10;
+}
+
+.bottom{
+    position:absolute;
+    bottom: 0px;
+    height: 28px;
     width: 100%;
+    background: #FAFAFA;
+}
+
+.left-fixed-right-auto{
+    position: relative;
+    width: 100%;
+    height: 100%;
     clear: both;
-    display: block;        
+    display: block;  
+    padding:12 12 12 0;      
 }
 
 .left {   
     /*border: solid 1px #CCC; */
-    float: left;
-    width: 200px; 
-    min-height: 90%;
+    position:absolute;
+    top:0;
+    width: 200px;  
+    height: 100%; 
     background: #FFF;
+    
 }
 
 .content-container {
-    /*border: solid 1px #CCC;*/
-    min-height: 80%;    
-    background: #FFF;    
-    margin-left: 220px;
-    margin-top: 12px;
-    margin-right: 12px; 
-    padding: 12px;                  
+    /*border: solid 1px #CCC;*/    
+    margin-left: 212px;  
+    height: 100%;         
+    background: #FFF;            
+}
+
+.content-container .inner{
+    padding:4px;
 }
 
 .overlay-center {

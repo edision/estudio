@@ -39,31 +39,39 @@ class App extends React.Component {
     return (
       <div>
         {DEBUG && <DevTools />}
-        <Navigation type="filling" activeDirection="bottom" onClick={this.handleNavItemClick} selectedKey={rootKey}>
-          <li className="navigation-logo-zone">
-            <Icon type="all" />
-            <span>EStudio</span>
-          </li>
-          <Item key="1-0" icon="text" text="参数管理" />
-        </Navigation>
-        <div className="left-fixed-right-auto">
-          <div className="left">
-            <Navigation style={{ maxWidth: '200px' }} type="tree" activeDirection="right" onClick={this.handleNavItemClick} selectedKey={this.state.selectedKey}>
-              {/*<li className="qn-navigation-vertical">
+        <div className="top">
+          <Navigation type="filling" activeDirection="bottom" onClick={this.handleNavItemClick} selectedKey={rootKey}>
+            <li className="navigation-logo-zone">
+              <Icon type="all" />
+              <span>EStudio</span>
+            </li>
+            <Item key="1-0" icon="text" text="参数管理" />
+          </Navigation>
+        </div>
+        <div className="middle">
+          <div className="left-fixed-right-auto">
+            <div className="left">
+              <Navigation style={{ maxWidth: '200px' }} type="tree" activeDirection="right" onClick={this.handleNavItemClick} selectedKey={this.state.selectedKey}>
+                {/*<li className="qn-navigation-vertical">
                 <Icon type="text" />
                 <span>参数管理</span>
               </li>*/}
-              <Item key="1-0-1" text="哈希参数" />
-              <Item key="1-0-2" text="复合参数" />
-            </Navigation>
-          </div>
-          <div className="content-container">
-              <Route exact path="/" component={HashParamList} />
+                <Item key="1-0-1" text="哈希参数" />
+                <Item key="1-0-2" text="复合参数" />
+              </Navigation>
+            </div>
+            <div className="content-container">
+             <div className="inner">
+               <Route exact path="/" component={HashParamList} />
               <Route path="/Params/Hash" component={HashParamList} />
               <Route path="/Params/Complex" component={ComplexParamList} />
+             </div>
             </div>
+          </div>
         </div>
-
+        <div className="bottom">
+          底部
+          </div>
 
       </div>
     );
