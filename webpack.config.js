@@ -19,47 +19,53 @@ if (debug) {
     );
 } else {
     plugins.push(
-        // new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: false,
-            sourcemap: false
-        })
-    );
-}
+        new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify('production')
+                }
+            }),
+            // new webpack.optimize.DedupePlugin(),
+            new webpack.optimize.OccurrenceOrderPlugin(),
+            new webpack.optimize.UglifyJsPlugin({
+                mangle: false,
+                sourcemap: false
+            })
+        );
+    }
 
-module.exports = {
-    entry: debug ? [
-        'react-hot-loader/patch',
-        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-        './src/index.js'
-    ]:"./src/index.js" ,
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js?qtag=[hash:8]",
-        publicPath: "/"
-    },
-    module: {
-        rules: [
-        {
-            test: /\.jsx?$/,
-            include: [
-                path.resolve(__dirname, "src")
-            ],
-            loader: "babel-loader"
+    module.exports = {
+        entry: debug ? [
+            'babel-polyfill',
+            'react-hot-loader/patch',
+            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+            './src/index.js'
+        ] : ['babel-polyfill', "./src/index.js"],
+        output: {
+            path: path.resolve(__dirname, "dist"),
+            filename: "bundle.js?qtag=[hash:8]",
+            publicPath: "/"
         },
-        {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-        }]
-    },
-    resolve: {
-        extensions: [".js", ".jsx", ".css"],
-        alias: {
-            "COMPONENTS": path.resolve(__dirname, "src", "components"),
-            "STORES": path.resolve(__dirname, "src", "stores"),
-        }
-    },
-    devtool: debug ? "source-map" : false,
-    plugins: plugins
-}
+        module: {
+            rules: [
+            {
+                test: /\.jsx?$/,
+                include: [
+                    path.resolve(__dirname, "src")
+                ],
+                loader: "babel-loader"
+            },
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            }]
+        },
+        resolve: {
+            extensions: [".js", ".jsx", ".css"],
+            alias: {
+                "COMPONENTS": path.resolve(__dirname, "src", "components"),
+                "STORES": path.resolve(__dirname, "src", "stores"),
+            }
+        },
+        devtool: debug ? "source-map" : false,
+        plugins: plugins
+    }
