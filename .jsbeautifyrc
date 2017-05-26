@@ -1,3 +1,6 @@
 {
-  "brace_style": "none,preserve-inline"  
+  "brace_style": "none,preserve-inline",
+  "css": {
+    "preserve_newlines": true
+  } 
 }

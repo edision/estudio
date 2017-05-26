@@ -69,7 +69,7 @@ body {
     top: 52px;
     z-index: 1002;
     min-height: 100%;
-    background: #EDF0F2;   
+    background: #EDF0F2;
 }
 
 .sidebar-container {
@@ -109,6 +109,7 @@ body {
     color: #FFF;
     font-size: 24px;
 }
+
 
 
 /*.next-navigation a, .next-navigation a:hover, .next-navigation a:link, .next-navigation a:visited{
