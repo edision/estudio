@@ -3,9 +3,7 @@ import { Route, withRouter, Link } from "react-router-dom";
 import { observer } from "mobx-react"
 // components
 if (DEBUG) var DevTools = require("mobx-react-devtools").default;
-import Navigation, { Item, Group } from "qnui/lib/navigation";
-import Icon from "qnui/lib/icon";
-import Menu from "qnui/lib/menu";
+import {Item} from "qnui/lib/navigation";
 //shared
 import Loading from "COMPONENTS/shared/Loading";
 import TopNavigation from "COMPONENTS/shared/TopNavigation";
@@ -45,28 +43,21 @@ class App extends React.Component {
     let leftItems = routes.filter(r => r.parent === rootKey).map(r => <Item key={r.key} text={r.name} />);
 
     return (
-      <div>
+      <div className="main container">
         {DEBUG && <DevTools />}
-        <div className="top">
-          <TopNavigation items={topItems} title="EStudio" onitemclicked={this.handleNavItemClick} selectedKey={rootKey} />
+        <header className="header">
+          <TopNavigation items={topItems} title="EStudio" onitemclicked={this.handleNavItemClick} selectedKey={rootKey} />          
+        </header>
+        <div className="main-container">
+          <aside className="sidebar-container">
+            <LeftNavigation style={styles.leftNav} items={leftItems} onitemclicked={this.handleNavItemClick} selectedKey={this.state.selectedKey} />
+          </aside>
+          <section className="content-container">
+            <Route exact path="/" component={HashParamList} />
+            <Route path="/Params/Hash" component={HashParamList} />
+            <Route path="/Params/Complex" component={ComplexParamList} />
+          </section>
         </div>
-        <div className="middle">
-          <div className="left-fixed-right-auto">
-            <div className="left">
-              <LeftNavigation style={styles.leftNav} items={leftItems} onitemclicked={this.handleNavItemClick} selectedKey={this.state.selectedKey} />
-            </div>
-            <div className="content-container">
-              <div className="inner">
-                <Route exact path="/" component={HashParamList} />
-                <Route path="/Params/Hash" component={HashParamList} />
-                <Route path="/Params/Complex" component={ComplexParamList} />
-              </div>
-            </div>
-          </div>
-        </div>
-        {/*<div className="bottom">
-          底部
-        </div>*/}
       </div>
     );
   }

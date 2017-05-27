@@ -11,6 +11,18 @@ class TopNavigation extends React.Component {
           <span>{this.props.title}</span>
         </li>
         {this.props.items}
+        <li className="navigation-toolbar">
+          <ul>
+            <li>
+              <Icon type="atm" />
+              <span>帮助</span>
+            </li>
+            <li>
+              <Icon type="set" />
+              <span>设置</span>
+            </li>
+          </ul>
+        </li>
       </Navigation>
     );
   }
