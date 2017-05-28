@@ -7,8 +7,10 @@
 }
 
 /*layout*/
-.main {
-    background: #EBEBEB;
+.main,body,#app {
+    background: #EDF0F2;
+    width:100%;
+    height: 100%;
 }
 
 .container {
@@ -29,7 +31,6 @@
     position: relative;
     background: #EDF0F2;
     top: 52px;
-    min-height: 400px;
     padding-bottom: 24px;
     overflow: hidden;
 }
@@ -46,12 +47,21 @@
 }
 
 .content-container{
-    margin-left: 220px;
-    margin-right: 160px;
+    margin-left: 200px;
     padding-bottom: 120px;
     background: #EDF0F2;
     min-height: 85vh;
     overflow: hidden;
+}
+
+.inner-container{
+    padding: 8px;
+    margin: 12px;
+    background: #FFF;
+}
+
+.inner-wrapper{
+    margin-top: 12px;    
 }
 
 .footer{
