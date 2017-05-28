@@ -49,7 +49,7 @@ class Edit extends React.Component {
 
     return (
       <div style={{ width: 600 }}>
-        <Form size="large" field={this.field}>
+        <Form size="large" field={this.field} onSubmit={this.handleSubmit}>
           <FormItem label="键" {...this.formItemLayout} hasFeedback>
             <Input  {...init('key', { rules: [{ required: true, message: '键必须填写' }] }) } placeholder="请输入键名..." />
           </FormItem>
@@ -60,7 +60,7 @@ class Edit extends React.Component {
             <Input multiple {...init('desc') } maxLength={500} hasLimitHint placeholder="说明,如：表xxx的序号..." />
           </FormItem>
           <FormItem wrapperCol={{ offset: this.formItemLayout.labelCol.span }}>
-            <Button type="primary" onClick={this.handleSubmit}>确定</Button>
+            <Button type="primary" htmlType="submit">确定</Button>
             &emsp;
             <Button onClick={this.handleReset}>重置</Button>
           </FormItem>

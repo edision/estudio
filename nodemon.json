@@ -9,6 +9,10 @@
     ],
     "watch": [
         "webpack.config.js",
-        "server.js"
+        "server.js",
+        "**/routes/*",
+        "**/models/*",
+        "**/controllers/*",
+        "**/configs/*"
     ]
 }
