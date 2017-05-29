@@ -1,11 +1,19 @@
 import db from '../models';
 
 class SysHashParamController {
+    create = async(ctx, next) => {
+        var data = ctx.body;
+        console.log(data);
+        await next();
+
+        ctx.body = data;
+    }
+
     /**
      * @param {number} pageIndex 页码
      * @param {number} pageSize 页大小
      */
-    getAll = async(ctx, next) => {       
+    getAll = async(ctx, next) => {
         const pageIndex = Number.parseInt(ctx.params.pageIndex);
         const pageSize = Number.parseInt(ctx.params.pageSize);
         await next();
