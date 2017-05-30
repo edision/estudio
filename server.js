@@ -1,11 +1,50 @@
 import Koa from 'koa';
+import cors from 'kcors';
+import body from 'koa-bodyparser';
+import logger from 'koa-logger';
+import responseTime from 'koa-response-time';
+import convert from 'koa-convert';
+import session from 'koa-generic-session';
+
 import path from 'path';
-import mongoose from 'mongoose';
+
+import db from './lib/db';
 import hashparam from './routes/hashparam';
 
+// ENVIRONMENT VARIABLES
+const SECRET         = process.env.SECRET           || 'faekkkeee00$';
+const PORT           = process.env.PORT             || 3000;
+const COUCHBASE_URI  = process.env.COUCHBASE_URI    || 'couchbase://127.0.0.1';
+const COUCHBASE_BUCK = process.env.COUCHBASE_BUCKET || 'default';
+const PASSWORD       = process.env.PASSWORD         || 'superfakepassword';
+
 const app = new Koa();
+app.proxy = true; //允许代理连接
 
+// CORS,LOGGER&RESPONSE-TIME
+app.use(cors());
+app.use(responseTime());
+app.use(logger());
 
+// SESSION
+app.keys = [SECRET];
+app.use(convert(session()))
+
+// BODY-PARSER
+app.use(body({
+    onerror: (err, ctx) => {
+        ctx.throw('Error parsing the body information', 422);
+    }
+}));
+
+// 保持数据库连接对象
+app.use(async(ctx, next) => {
+    ctx.state.db = db;
+    await next();
+});
+
+// ERROR HANDLER
+///
 
 const isDev = process.env.NODE_ENV === "development";
 if (isDev) {
@@ -46,12 +85,6 @@ app.listen(port, function() {
     console.log(`Web服务器已启动。访问地址: http://localhost:${port}`);
 });
 
-// 连接数据库
-const dbconfig = require('./configs/dbconfig.json');
-mongoose.Promise = global.Promise //需要
-mongoose.connect(dbconfig.connStr, err => {
-    if (err) console.error(err);
-    else console.log(`数据库连接成功！ connStr = ${dbconfig.connStr}`);
-});
+
 
 export default app;

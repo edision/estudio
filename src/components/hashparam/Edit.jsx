@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 // qnui
 import Field from 'qnui/lib/field';
 import Form from 'qnui/lib/form';
@@ -7,6 +8,7 @@ import Button from 'qnui/lib/button';
 
 const FormItem = Form.Item;
 
+@observer
 class Edit extends React.Component {
   componentWillMount() {
     const record = this.props.record;

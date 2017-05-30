@@ -5,3 +5,8 @@
 //   global: Global,
 //   tradelist: TradeList
 // }
+import HashParam from './hashparam';
+
+export default {
+  hashparam: HashParam
+}
