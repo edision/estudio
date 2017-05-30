@@ -36,6 +36,7 @@ class List extends React.Component {
 
   handleSearch = value => {
     this.props.hashparam.filter = value.key;
+    this.props.hashparam.fetchParams();
   }
   handleAddClicked = () => {
     this.editTitle = '新增参数'
@@ -55,6 +56,7 @@ class List extends React.Component {
   handlePageSizeChange = size => {
     const store = this.props.hashparam;
     store.pageSize = size;
+    store.pageIndex = 1;
     store.fetchParams();
   }
   handlePageChange = (value, e) => {
@@ -81,7 +83,7 @@ class List extends React.Component {
     Dialog.confirm({
       content: `确定删除参数: ${record.key}?`,
       onOk: () => {
-        console.log(record);
+        this.props.hashparam.removeParam(record._id);
       }
     });
   }
@@ -91,7 +93,10 @@ class List extends React.Component {
   rowSelection = {
     onChange: this.onRowSelected
   }
-  renderIndex = (value, index, record) => index + 1;
+  renderIndex = (value, index, record) => {
+    const {pageIndex, pageSize} = this.props.hashparam;
+    return (pageIndex - 1) * pageSize + index + 1;
+  }
   renderRowOpers = (value, index, record) => {
     return (
       <ButtonGroup size="small">

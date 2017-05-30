@@ -44,7 +44,7 @@ export class HashParamStore {
             .then(rsp => {
                 if (rsp.ok) return rsp.json();
             })
-            .then(rst => this.params.push(new HashParam(rst.result)))
+            .then(rst => this.fetchParams())
             .catch(err => console.error(err));
     }
 
@@ -65,9 +65,8 @@ export class HashParamStore {
             .then(rsp => {
                 if (rsp.ok) return rsp.json();
             })
-            .then(json => {
-                const idx = this.params.findIndex(p => p._id === id);
-                this.params.splice(idx, 1);
+            .then(json => {                
+                this.fetchParams();
             })
             .catch(err => console.error(err))
     }
