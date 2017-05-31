@@ -6,6 +6,7 @@ import { Search, Button, Icon, Table, Pagination, Dialog, Menu, Dropdown } from 
 
 // components
 import Edit from "./Edit";
+import LongTextWrapper from 'COMPONENTS/shared/LongTextWrapper';
 
 import * as mobxHelper from 'UTILS/mobxhelper';
 
@@ -92,7 +93,8 @@ class List extends React.Component {
   }
 
   renderCellDesc = (value, index, record, context) => {
-    return record.desc.split('\n').map((item, index) => <span key={index}>{item}<br /></span>)
+    return <LongTextWrapper text={record.desc} colLen={50}/>
+    // return record.desc.split('\n').map((item, index) => <span key={index}>{item}<br /></span>)
   }
 
   renderRowOpers = (value, index, record) => {
