@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "qnui/lib/navigation";
+import { Navigation } from "qnui";
 class LeftNavigation extends React.Component {
   render() {
     return (

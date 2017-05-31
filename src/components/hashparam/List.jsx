@@ -2,26 +2,18 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 // qnui
-import Search from "qnui/lib/search";
-import Button from "qnui/lib/button";
-import Icon from "qnui/lib/icon";
-import Table from "qnui/lib/table";
-import Pagination from 'qnui/lib/pagination';
-import Dialog from 'qnui/lib/dialog';
-import Feedback from 'qnui/lib/feedback';
+import { Search, Button, Icon, Table, Pagination, Dialog, Menu, Dropdown } from "qnui";
 
 // components
 import Edit from "./Edit";
 
-const ButtonGroup = Button.Group;
-const Toast = Feedback.toast;
-
-const showLoading = () => Toast.loading('加载数据...');
-const hideLoading = () => Toast.hide();
+import * as mobxHelper from 'UTILS/mobxhelper';
 
 @inject("hashparam")
 @observer
 class List extends React.Component {
+  store = this.props.hashparam;
+
   componentDidMount() {
     this.props.hashparam.fetchParams();
   }
@@ -32,11 +24,11 @@ class List extends React.Component {
 
   currentRecord = null;
   editTitle = '';
-  selectedKeys = [];
+  selectedKeys = null;
 
   handleSearch = value => {
-    this.props.hashparam.filter = value.key;
-    this.props.hashparam.fetchParams();
+    this.store.filter = value.key;
+    this.store.fetchParams();
   }
   handleAddClicked = () => {
     this.editTitle = '新增参数'
@@ -47,29 +39,30 @@ class List extends React.Component {
     if (this.selectedKeys && this.selectedKeys.length > 0)
       Dialog.confirm({
         content: '确认删除选中项？',
-        onOk: () => {         
-          this.props.hashparam.removeParam()
+        onOk: () => {
+          if (this.store.removeParams(this.selectedKeys)) {
+            this.selectedKeys = null;
+          };
         }
       });
   }
   handleEditDialogClose = () => this.setState({ showEdit: false });
   handlePageSizeChange = size => {
-    const store = this.props.hashparam;
-    store.pageSize = size;
-    store.pageIndex = 1;
-    store.fetchParams();
+    this.store.pageSize = size;
+    this.store.pageIndex = 1;
+    this.store.fetchParams();
   }
   handlePageChange = (value, e) => {
-    const store = this.props.hashparam;
-    store.pageIndex = value;
-    store.fetchParams();
+    this.store.pageIndex = value;
+    this.store.fetchParams();
   }
   handleEditSubmit = values => {
     this.setState({ showEdit: false });
     if (this.currentRecord) {
       // 编辑
+      this.store.updateParam(values);
     } else {
-      this.props.hashparam.createParam(values);     
+      this.store.createParam(values);
     }
   }
 
@@ -83,7 +76,7 @@ class List extends React.Component {
     Dialog.confirm({
       content: `确定删除参数: ${record.key}?`,
       onOk: () => {
-        this.props.hashparam.removeParam(record._id);
+        this.store.removeParam(record._id);
       }
     });
   }
@@ -94,21 +87,36 @@ class List extends React.Component {
     onChange: this.onRowSelected
   }
   renderIndex = (value, index, record) => {
-    const {pageIndex, pageSize} = this.props.hashparam;
+    const { pageIndex, pageSize } = this.store;
     return (pageIndex - 1) * pageSize + index + 1;
   }
+
+  renderCellDesc = (value, index, record, context) => {
+    return record.desc.split('\n').map((item, index) => <span key={index}>{item}<br /></span>)
+  }
+
   renderRowOpers = (value, index, record) => {
+    const menu = (
+      <Menu>
+        <Menu.Item key="1" onClick={this.handleEditCurrentRecord(record)}>编辑</Menu.Item>
+        <Menu.Item key="2" onClick={this.handleRemoveCurrentRecord(record)}>删除</Menu.Item>
+      </Menu>
+    );
+    const trigger = (
+      <Button type="light">
+        操作 <Icon type="arrow-down" />
+      </Button>
+    );
     return (
-      <ButtonGroup size="small">
-        <Button type="primary" onClick={this.handleEditCurrentRecord(record)}>编辑</Button>
-        <Button type="primary" shape="warning" onClick={this.handleRemoveCurrentRecord(record)}>删除</Button>
-      </ButtonGroup>
+      <Dropdown trigger={trigger} triggerType="click">{menu}</Dropdown>
     );
   }
 
   render() {
     const { dlgTitle, showEdit } = this.state;
-    const {params, total, pageIndex, pageSize, filter} = this.props.hashparam;    
+    const { isFetching, params, total, pageIndex, pageSize, filter } = this.store;
+    // Table控件只能传入Array类型，加上Mobx的值不访问一次不会更新，因此在此手动map一次
+    const data = mobxHelper.toArray(params);
     return (
       <div className="inner-container">
         <Dialog title={this.editTitle} footer={false} visible={showEdit} onClose={this.handleEditDialogClose.bind(this)}>
@@ -116,16 +124,19 @@ class List extends React.Component {
         </Dialog>
         <Search onSearch={this.handleSearch} value={filter} placeholder="输入名称、别名、值..." searchText="搜索" type="normal" size="large" inputWidth={500} />
         <div className="inner-wrapper">
-          <Button type="primary" onClick={this.handleAddClicked.bind(this)}><Icon type="add" />&nbsp;&nbsp;新增参数</Button>
+          <Button type="normal" onClick={this.handleAddClicked.bind(this)}><Icon type="add" />&nbsp;&nbsp;新增参数</Button>
           &emsp;
-          <Button type="primary" shape="warning" onClick={this.handleRemoveSelected}><Icon type="close" /> 删除选中</Button>
+          <Button type="normal" onClick={this.handleRemoveSelected}><Icon type="close" /> 删除选中</Button>
+          <div className="pull-right">
+            <Pagination type="mini" total={total} current={pageIndex} pageSize={pageSize} onChange={this.handlePageChange} />
+          </div>
         </div>
         <div className="inner-wrapper">
-          <Table dataSource={params.slice()} primaryKey="_id" isZebra rowSelection={this.rowSelection}>
+          <Table isLoading={isFetching} dataSource={data} primaryKey="_id" isZebra rowSelection={this.rowSelection}>
             <Table.Column title="序号" cell={this.renderIndex} width={70} />
             <Table.Column title="键" dataIndex="key" width={160} />
             <Table.Column title="值" dataIndex="value" />
-            <Table.Column title="描述" dataIndex="desc" />
+            <Table.Column title="描述" cell={this.renderCellDesc} />
             <Table.Column title="操作" cell={this.renderRowOpers} />
           </Table>
         </div>

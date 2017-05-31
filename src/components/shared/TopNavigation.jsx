@@ -1,6 +1,5 @@
 import React from 'react';
-import Navigation from "qnui/lib/navigation";
-import Icon from "qnui/lib/icon";
+import {Navigation,Icon} from "qnui";
 
 class TopNavigation extends React.Component {
   render() {

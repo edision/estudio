@@ -24,7 +24,7 @@ class SysHashParamController {
         console.log('更新哈希参数-->', data);
         await next();
         try {
-            await db.SysHashParam.update(data);
+            await db.SysHashParam.update({_id: data._id}, data);
             ctx.body = { isOk: true }
         } catch (error) {
             console.error(error)
@@ -47,6 +47,7 @@ class SysHashParamController {
 
     batchRemove = async(ctx, next) => {
         const ids = ctx.request.body;
+        console.log(ids);
         await next();
         try {
             await db.SysHashParam.remove({_id: {$in: ids}});
@@ -76,7 +77,7 @@ class SysHashParamController {
         }
 
         let total = await db.SysHashParam.count();
-        let docs = await db.SysHashParam.find(query).sort({ createDt: -1 }).skip((pageIndex - 1) * pageSize).limit(pageSize);
+        let docs = await db.SysHashParam.find(query).sort({ createDt: 1 }).skip((pageIndex - 1) * pageSize).limit(pageSize);
         ctx.body = {
             pageIndex,
             pageSize,

@@ -3,7 +3,7 @@ import { Route, withRouter, Link } from "react-router-dom";
 import { observer } from "mobx-react"
 // components
 if (DEBUG) var DevTools = require("mobx-react-devtools").default;
-import {Item} from "qnui/lib/navigation";
+import {Navigation} from "qnui";
 //shared
 import Loading from "COMPONENTS/shared/Loading";
 import TopNavigation from "COMPONENTS/shared/TopNavigation";
@@ -11,6 +11,8 @@ import LeftNavigation from "COMPONENTS/shared/LeftNavigation";
 //菜单
 import HashParamList from "COMPONENTS/hashparam/List";
 import ComplexParamList from "COMPONENTS/complexparam/List";
+
+const Item = Navigation.Item;
 
 const routes = [
   { path: "/", key: "1-0", name: "参数管理", icon: "text", parent: false },

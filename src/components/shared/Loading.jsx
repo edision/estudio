@@ -1,8 +1,7 @@
 import React from "react";
-import {observer, inject} from "mobx-react";
+import { observer, inject } from "mobx-react";
 // componets
-import Overlay from "qnui/lib/overlay";
-import Loading from "qnui/lib/loading";
+import { Overlay, Loading } from "qnui";
 
 class LoadingOverlay extends React.Component {
   render() {
@@ -11,7 +10,7 @@ class LoadingOverlay extends React.Component {
         hasMask
         align="cc cc"
       >
-        
+
         <span className="overlay-center">
           <Loading color="#e6e6e6" size="large" type="inline" />
           <div className="text">正在加载...</div>

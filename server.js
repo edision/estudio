@@ -80,9 +80,8 @@ if (isDev) {
     console.log("配置完成");
 }
 
-const port = 3000;
-app.listen(port, function() {
-    console.log(`Web服务器已启动。访问地址: http://localhost:${port}`);
+app.listen(PORT, function() {
+    console.log(`Web服务器已启动。访问地址: http://localhost:${PORT}`);
 });
 
 

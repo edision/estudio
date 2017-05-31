@@ -64,6 +64,7 @@ if (debug) {
             alias: {
                 "COMPONENTS": path.resolve(__dirname, "src", "components"),
                 "STORES": path.resolve(__dirname, "src", "stores"),
+                "UTILS": path.resolve(__dirname, "src", "utils"),
             }
         },
         devtool: debug ? "source-map" : false,

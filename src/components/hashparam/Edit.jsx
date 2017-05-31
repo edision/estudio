@@ -1,10 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 // qnui
-import Field from 'qnui/lib/field';
-import Form from 'qnui/lib/form';
-import Input from 'qnui/lib/input';
-import Button from 'qnui/lib/button';
+import {Field, Form, Input, Button} from 'qnui';
 
 const FormItem = Form.Item;
 

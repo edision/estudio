@@ -1,9 +1,9 @@
 import { observable, action, computed } from 'mobx';
 // qnui
-import Feedback from 'qnui/lib/feedback';
+import { Feedback } from 'qnui';
 const Toast = Feedback.toast;
 // utils
-import * as webhelper from '../utils/webhelper';
+import * as webhelper from 'UTILS/webhelper';
 
 class HashParam {
     @observable _id;
@@ -37,7 +37,7 @@ export class HashParamStore {
 
     /**
      * 新增
-     * @param {HashParam} val 
+     * @param {HashParam} val
      */
     @action createParam(val) {
         webhelper.postJson('/api/hashparam/add', val)
@@ -54,8 +54,15 @@ export class HashParamStore {
                 if (rsp.ok) return rsp.json();
             })
             .then(rst => {
-                let param = this.params.find(p => p._id === val._id);
-                param = { ...param, ...val };
+                if (rst.isOk) {
+                    let idx = this.params.findIndex(p => p._id === val._id);
+                    let param = this.params[idx];
+                    param.key = val.key;
+                    param.value = val.value;
+                    param.desc = val.desc;    
+
+                    // this.fetchParams()               
+                }
             })
             .catch(err => console.error(err));
     }
@@ -65,31 +72,33 @@ export class HashParamStore {
             .then(rsp => {
                 if (rsp.ok) return rsp.json();
             })
-            .then(json => {                
+            .then(json => {
                 this.fetchParams();
             })
             .catch(err => console.error(err))
     }
 
     @action removeParams(ids) {
-      webhelper.postJson('/api/hashparam/batchremove', ids)
-      .then(rsp => {
-        if(rsp.ok) return rsp.json();
-      })
-      .then(json => {
-        if(json.isOk) {
-          // this.params.splice()
-        }
-      })
+        webhelper.postJson('/api/hashparam/batchremove', ids)
+            .then(rsp => {
+                if (rsp.ok) return rsp.json();
+            })
+            .then(json => {
+                if (json.isOk) {
+                    this.fetchParams();
+                    return true;
+                }
+            })
+            .catch(err => console.error(err));
     }
 
     @action fetchParams() {
         this.isFetching = true;
-        Toast.loading({
-            content: '正则获取哈希参数...',
-            hasMask: true,
-            align: 'cc tc'
-        });
+        // Toast.loading({
+        //     content: '正则获取哈希参数...',
+        //     hasMask: true,
+        //     align: 'cc tc'
+        // });
         webhelper.postJson('/api/hashparam', {
                 pageIndex: this.pageIndex,
                 pageSize: this.pageSize,
@@ -97,21 +106,23 @@ export class HashParamStore {
             })
             .then(rsp => {
                 this.isFetching = false;
-                Toast.success({
-                    content: '哈希参数获取完成',
-                    align: 'cc tc',
-                    duration: 1000
-                })
+                // Toast.success({
+                //     content: '哈希参数获取完成',
+                //     align: 'cc tc',
+                //     duration: 1000
+                // })
                 if (rsp.ok) return rsp.json();
             })
             .then(result => {
                 this.total = result.total;
-                this.params.replace(result.data || [])
+                this.params.replace(result.data.map(d => new HashParam(d)) || [])
             })
             .catch(err => {
-                Toast.error('获取哈希参数失败!');
+                // Toast.error('获取哈希参数失败!');
             });
     }
 }
 
-export default new HashParamStore();
+// const store = window.HashParamStore = new HashParamStore();
+const store = new HashParamStore();
+export default store;
