@@ -16,6 +16,7 @@ class LongTextWrapper extends React.Component {
   render() {
     const { collapse } = this.state;
     const { text, colLen } = this.props;
+    if(!text) return null;
     if (text.length <= colLen) {
       return (
         <div>

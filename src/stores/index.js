@@ -6,7 +6,9 @@
 //   tradelist: TradeList
 // }
 import HashParam from './hashparam';
+import Image from './image';
 
 export default {
-  hashparam: HashParam
+  hashparam: HashParam,
+  image: Image
 }

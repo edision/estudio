@@ -31,29 +31,34 @@ export class HashParamStore {
     @observable params = [];
     @observable filter = "";
     @observable pageIndex = 1;
-    @observable pageSize = 5;
+    @observable pageSize = 20;
     @observable total = 0;
     @observable isFetching = false;
+    @observable isSaving = false;
 
     /**
      * 新增
      * @param {HashParam} val
      */
     @action createParam(val) {
+        this.isSaving = true;
         webhelper.postJson('/api/hashparam/add', val)
             .then(rsp => {
+                this.isSaving = false;
                 if (rsp.ok) return rsp.json();
             })
             .then(rst => this.fetchParams())
-            .catch(err => console.error(err));
+            .catch(err => this.isSaving = false);
     }
 
     @action updateParam(val) {
+        this.isSaving = true;
         webhelper.postJson('/api/hashparam/edit', val)
             .then(rsp => {
                 if (rsp.ok) return rsp.json();
             })
             .then(rst => {
+                this.isSaving = false;
                 if (rst.isOk) {
                     let idx = this.params.findIndex(p => p._id === val._id);
                     let param = this.params[idx];
@@ -64,7 +69,7 @@ export class HashParamStore {
                     // this.fetchParams()               
                 }
             })
-            .catch(err => console.error(err));
+            .catch(err => this.isSaving = false);
     }
 
     @action removeParam(id) {

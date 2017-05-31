@@ -16,7 +16,8 @@ class List extends React.Component {
   store = this.props.hashparam;
 
   componentDidMount() {
-    this.props.hashparam.fetchParams();
+    this.store.filter = '';
+    this.store.fetchParams();
   }
 
   state = {
@@ -92,9 +93,12 @@ class List extends React.Component {
     return (pageIndex - 1) * pageSize + index + 1;
   }
 
+  renderCellValue = (value, index, record, context) => {
+    return <LongTextWrapper text={record.value} colLen={50}/>  
+  }
+
   renderCellDesc = (value, index, record, context) => {
-    return <LongTextWrapper text={record.desc} colLen={50}/>
-    // return record.desc.split('\n').map((item, index) => <span key={index}>{item}<br /></span>)
+    return <LongTextWrapper text={record.desc} colLen={50}/>    
   }
 
   renderRowOpers = (value, index, record) => {
@@ -123,7 +127,7 @@ class List extends React.Component {
         <Dialog title={this.editTitle} footer={false} visible={showEdit} onClose={this.handleEditDialogClose.bind(this)}>
           <Edit record={this.currentRecord} onSubmit={this.handleEditSubmit} />
         </Dialog>
-        <Search onSearch={this.handleSearch} value={filter} placeholder="输入名称、别名、值..." searchText="搜索" type="normal" size="large" inputWidth={500} />
+        <Search hasClear onSearch={this.handleSearch} value={filter} placeholder="输入名称、别名、值..." searchText="搜索" type="normal" size="large" inputWidth={500} />
         <div className="inner-wrapper">
           <Button type="normal" onClick={this.handleAddClicked.bind(this)}><Icon type="add" />&nbsp;&nbsp;新增参数</Button>
           &emsp;
@@ -136,9 +140,9 @@ class List extends React.Component {
           <Table isLoading={isFetching} dataSource={mobxHelper.toArray(params)} primaryKey="_id" isZebra rowSelection={this.rowSelection}>
             <Table.Column title="序号" cell={this.renderIndex} width={70} />
             <Table.Column title="键" dataIndex="key" width={160} />
-            <Table.Column title="值" dataIndex="value" />
+            <Table.Column title="值" cell={this.renderCellValue} />
             <Table.Column title="描述" cell={this.renderCellDesc} />
-            <Table.Column title="操作" cell={this.renderRowOpers} />
+            <Table.Column title="操作" cell={this.renderRowOpers} width={120}/>
           </Table>
         </div>
         <div className="inner-wrapper">
