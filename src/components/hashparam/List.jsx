@@ -116,7 +116,6 @@ class List extends React.Component {
     const { dlgTitle, showEdit } = this.state;
     const { isFetching, params, total, pageIndex, pageSize, filter } = this.store;
     // Table控件只能传入Array类型，加上Mobx的值不访问一次不会更新，因此在此手动map一次
-    const data = mobxHelper.toArray(params);
     return (
       <div className="inner-container">
         <Dialog title={this.editTitle} footer={false} visible={showEdit} onClose={this.handleEditDialogClose.bind(this)}>
@@ -132,7 +131,7 @@ class List extends React.Component {
           </div>
         </div>
         <div className="inner-wrapper">
-          <Table isLoading={isFetching} dataSource={data} primaryKey="_id" isZebra rowSelection={this.rowSelection}>
+          <Table isLoading={isFetching} dataSource={mobxHelper.toArray(params)} primaryKey="_id" isZebra rowSelection={this.rowSelection}>
             <Table.Column title="序号" cell={this.renderIndex} width={70} />
             <Table.Column title="键" dataIndex="key" width={160} />
             <Table.Column title="值" dataIndex="value" />
