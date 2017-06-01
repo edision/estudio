@@ -36,10 +36,10 @@ class ImageStore {
             this.total = 1;            
             this.images.replace([new Image({
                 _id: 1,
-                name: 'qqmail-logo',
-                imgUrl: 'https://rescdn.qqmail.com/zh_CN/htmledition/images/webp/spacer1e9c5d.gif',
-                fileName: 'qqmaillogo',
-                fileExt: 'gif',
+                name: 'google-logo',
+                imgUrl: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+                fileName: 'google',
+                fileType: 'png',
                 createDt: Date.now()
             })]);
     }

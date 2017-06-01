@@ -24,7 +24,7 @@ class ImageIndex extends React.Component {
     onChange: this.handleRowSelected
   };
   renderTableIndex = (value, index, record, context) => index + 1;
-  renderCellImage = (value, index, record, context) => <img src={record.imgUrl} alt={record.fileName} />;
+  renderCellImage = (value, index, record, context) => <img height={80} src={record.imgUrl} alt={record.fileName} />;
   renderRowOpers = (value, index, record, context) => {
     const menu = (
       <Menu>
