@@ -3,7 +3,7 @@ import { Navigation } from "qnui";
 class LeftNavigation extends React.Component {
   render() {
     return (
-      <Navigation style={this.props.style} type="tree" activeDirection="right" onClick={this.props.onitemclicked} selectedKey={this.props.selectedKey}>
+      <Navigation style={this.props.style} type="tree" activeDirection="right">
         {this.props.items}
       </Navigation>
     );

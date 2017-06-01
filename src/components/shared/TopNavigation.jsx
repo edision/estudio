@@ -4,7 +4,7 @@ import {Navigation,Icon} from "qnui";
 class TopNavigation extends React.Component {
   render() {
     return (
-      <Navigation type="filling" activeDirection="bottom" onClick={this.props.onitemclicked} selectedKey={this.props.selectedKey}>
+      <Navigation type="filling" activeDirection="bottom" defaultSelectedKey={this.props.defaultSelectedKey}>
         <li className="navigation-logo-zone">
           <Icon type="all" />
           <span>{this.props.title}</span>
