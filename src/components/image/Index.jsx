@@ -1,9 +1,15 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 // qnui
-import { Search, Button, Icon, Pagination,Table,Menu,Dropdown } from 'qnui';
+import { Search, Button, Icon, Pagination, Table, Menu, Dropdown, Dialog } from 'qnui';
 //
 import * as mh from 'UTILS/mobxhelper';
+
+const styles = {
+  imageDialog: {
+    maxWidth: 800
+  }
+}
 
 @inject('image')
 @observer
@@ -13,7 +19,10 @@ class ImageIndex extends React.Component {
   }
 
   store = this.props.image;
-
+  state = {
+    isShowImageDialog: false,
+    currentImg: null
+  };
   handleSearch = value => console.log(value);
   handleAddClicked = e => console.log(e);
   handleRemoveSelected = e => console.log(e);
@@ -24,7 +33,7 @@ class ImageIndex extends React.Component {
     onChange: this.handleRowSelected
   };
   renderTableIndex = (value, index, record, context) => index + 1;
-  renderCellImage = (value, index, record, context) => <img height={80} src={record.imgUrl} alt={record.fileName} />;
+  renderCellImage = (value, index, record, context) => <img height={80} src={record.imgUrl} alt={record.fileName} onClick={this.handleShowCurrentImg(record)}/>;
   renderRowOpers = (value, index, record, context) => {
     const menu = (
       <Menu>
@@ -43,6 +52,20 @@ class ImageIndex extends React.Component {
   }
   handleEditCurrentRecord = (record) => console.log(record);
   handleRemoveCurrentRecord = (record) => console.log(record);
+
+  // dialogs
+  handleShowCurrentImg = (record) => e => this.setState(prevState => {
+    return {
+      isShowImageDialog: !prevState.isShowImageDialog,
+      currentImg: record
+    }
+  });
+  handleCloseImageDialog = () => this.setState(prevState => {
+    return {
+      isShowImageDialog: !prevState.isShowImageDialog,
+      currentImg: null
+    }
+  });
 
   render() {
     const { isFetching, images, pageIndex, pageSize, total } = this.store;
@@ -69,6 +92,11 @@ class ImageIndex extends React.Component {
         <div className="inner-wrapper">
           <Pagination total={total} current={pageIndex} pageSize={pageSize} pageSizeSelector="dropdown" pageSizePosition="end" onChange={this.handlePageChange} onPageSizeChange={this.handlePageSizeChange} />
         </div>
+        {this.state.currentImg && <Dialog visible={this.state.isShowImageDialog} style={styles.imageDialog} footer={false} title={this.state.currentImg.fileName} onClose={this.handleCloseImageDialog}>
+          <div>
+            <img src={this.state.currentImg.imgUrl} alt={this.state.currentImg.fileName} />
+          </div>
+        </Dialog>}
       </div>
     );
   }
