@@ -10178,6 +10178,7 @@ let HashParamStore = exports.HashParamStore = (_class3 = class HashParamStore {
     removeParams(ids) {
         webhelper.postJson('/api/hashparam/batchremove', ids).then(rsp => {
             if (rsp.ok) return rsp.json();
+            throw new Error(rsp.statusText);
         }).then(json => {
             if (json.isOk) {
                 this.fetchParams();
@@ -10205,11 +10206,16 @@ let HashParamStore = exports.HashParamStore = (_class3 = class HashParamStore {
             //     duration: 1000
             // })
             if (rsp.ok) return rsp.json();
+            throw new Error(rsp.statusText);
         }).then(result => {
             this.total = result.total;
             this.params.replace(result.data.map(d => new HashParam(d)) || []);
         }).catch(err => {
-            // Toast.error('获取哈希参数失败!');
+            Toast.error({
+                content: '获取哈希参数失败!',
+                align: 'cc tc'
+            });
+            this.isFetching = false;
         });
     }
 }, (_descriptor7 = _applyDecoratedDescriptor(_class3.prototype, 'params', [_mobx.observable], {

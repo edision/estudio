@@ -87,6 +87,7 @@ export class HashParamStore {
         webhelper.postJson('/api/hashparam/batchremove', ids)
             .then(rsp => {
                 if (rsp.ok) return rsp.json();
+                throw new Error(rsp.statusText);
             })
             .then(json => {
                 if (json.isOk) {
@@ -117,13 +118,18 @@ export class HashParamStore {
                 //     duration: 1000
                 // })
                 if (rsp.ok) return rsp.json();
+                throw new Error(rsp.statusText);
             })
             .then(result => {
                 this.total = result.total;
                 this.params.replace(result.data.map(d => new HashParam(d)) || [])
             })
             .catch(err => {
-                // Toast.error('获取哈希参数失败!');
+                Toast.error({
+                    content: '获取哈希参数失败!',
+                    align: 'cc tc'                    
+                });
+                this.isFetching = false;
             });
     }
 }
