@@ -92,7 +92,7 @@ class ImageIndex extends React.Component {
         <div className="inner-wrapper">
           <Pagination total={total} current={pageIndex} pageSize={pageSize} pageSizeSelector="dropdown" pageSizePosition="end" onChange={this.handlePageChange} onPageSizeChange={this.handlePageSizeChange} />
         </div>
-        {this.state.currentImg && <Dialog visible={this.state.isShowImageDialog} style={styles.imageDialog} footer={false} title={this.state.currentImg.fileName} onClose={this.handleCloseImageDialog}>
+        {this.state.currentImg && <Dialog visible={this.state.isShowImageDialog} autoFocus={false} style={styles.imageDialog} footer={false} title={this.state.currentImg.fileName} onClose={this.handleCloseImageDialog}>
           <div>
             <img src={this.state.currentImg.imgUrl} alt={this.state.currentImg.fileName} />
           </div>

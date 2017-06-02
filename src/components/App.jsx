@@ -3,7 +3,7 @@ import { Route, withRouter, Link } from "react-router-dom";
 import { observer } from "mobx-react"
 // components
 if (DEBUG) var DevTools = require("mobx-react-devtools").default;
-import { Navigation, Menu } from "qnui";
+import { Navigation, Menu, Icon } from "qnui";
 //shared
 import Loading from "COMPONENTS/shared/Loading";
 import TopNavigation from "COMPONENTS/shared/TopNavigation";
@@ -34,47 +34,72 @@ const styles = {
 @withRouter
 @observer
 class App extends React.Component {
-  nav = {selectedKey: "1-0-1", parentKey: '1-0'};
+  state = { selectedKey: "1-0-1", parentKey: '1-0', topSelectedKey: "1-0" };
 
   handleTopNavItemClick = (key, item) => {
     const selectedKey = `${key}-1`;
     let route = routes.find(r => r.key === selectedKey);
     if (route) {
-      this.nav = { selectedKey: selectedKey, parentKey: key };
+      const parent = routes.find(r => r.key === route.parent);
+      let topKey = key;
+      if (parent && parent.isMenu) {
+        topKey = parent.parent;
+      }
+      this.setState({ selectedKey: selectedKey, parentKey: key, topSelectedKey: topKey });
       this.props.history.push(route.path);
     }
   }
 
   handleLeftNavItemClick = (key, item) => {
-    const route = routes.find(r => r.key === key);    
-    if(route) {      
-      this.nav = {
+    const route = routes.find(r => r.key === key);
+    if (route) {
+      const parent = routes.find(r => r.key === route.parent);
+      let topKey = route.parent;
+      if (parent && parent.isMenu) {
+        topKey = parent.parent;
+      }
+      this.setState({
         selectedKey: key,
-        parentKey: route.parent
-      };
+        parentKey: route.parent,
+        topSelectedKey: topKey
+      });
+
       this.props.history.push(route.path);
     }
   }
 
   renderTopNav = () => {
-    const {selectedKey, parentKey} = this.nav;
-    return routes.filter(r => !r.parent).map(r => {      
+    const { selectedKey, parentKey } = this.state;
+    return routes.filter(r => !r.parent).map(r => {
       const subMenu = routes.filter(sub => sub.isMenu && sub.parent === r.key);
       if (subMenu.length > 0) {
         return (
           <Item key={r.key} icon={r.icon} text={r.name}>
-            <Menu selectedKeys={selectedKey}>
+            <Menu>
               {subMenu.map(sub => <Menu.Item key={sub.key} onClick={this.handleTopNavItemClick}>{sub.name}</Menu.Item>)}
             </Menu>
           </Item>);
       }
-      else return <Item selected={r.key === parentKey} key={r.key} icon={r.icon} text={r.name} onClick={this.handleTopNavItemClick}/>;
+      else return <Item selected={r.key === parentKey} key={r.key} icon={r.icon} text={r.name} onClick={this.handleTopNavItemClick} />;
     });
   }
 
-  renderLeftNav = () => routes.filter(r => r.parent === this.nav.parentKey).map(r => <Item selected={r.key === this.nav.selectedKey} key={r.key} text={r.name} onClick={this.handleLeftNavItemClick}/>)
+  renderLeftNav = () => {
+    const { parentKey, selectedKey } = this.state;
+    const parent = routes.find(r => r.key === parentKey);
+    if (parent.isMenu) {
+      return (
+        <Item key={parent.key} text={parent.name} opened>
+          <Navigation>
+            {routes.filter(r => r.parent === parentKey).map(r => <Item selected={r.key === selectedKey} key={r.key} text={r.name} onClick={this.handleLeftNavItemClick} />)}
+          </Navigation>
+        </Item>
+      );
+    }
+    return routes.filter(r => r.parent === parentKey).map(r => <Item selected={r.key === selectedKey} key={r.key} text={r.name} onClick={this.handleLeftNavItemClick} />);
+  };
 
-  render() {   
+  render() {
     let topItems = this.renderTopNav();
     let leftItems = this.renderLeftNav();
 
@@ -82,7 +107,7 @@ class App extends React.Component {
       <div className="main container">
         {DEBUG && <DevTools />}
         <header className="header">
-          <TopNavigation items={topItems} title="EStudio" />
+          <TopNavigation title="EStudio" defaultSelectedKey={this.state.topSelectedKey} items={topItems} />
         </header>
         <div className="main-container">
           <aside className="sidebar-container">
@@ -93,6 +118,7 @@ class App extends React.Component {
             <Route path="/Params/Hash" component={HashParamList} />
             <Route path="/Params/Complex" component={ComplexParamList} />
             <Route path="/Content/Image" component={ImageIndex} />
+            <Route path="/Tools/Crypt" component={UnicodeChs} />            
           </section>
         </div>
       </div>
