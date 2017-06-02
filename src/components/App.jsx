@@ -12,7 +12,8 @@ import LeftNavigation from "COMPONENTS/shared/LeftNavigation";
 import HashParamList from "COMPONENTS/hashparam/List";
 import ComplexParamList from "COMPONENTS/complexparam/List";
 import ImageIndex from "COMPONENTS/image/Index";
-import UnicodeChs from "COMPONENTS/tools/crypt/unicode";
+import UnicodeChs from "COMPONENTS/tools/unicode";
+import Base64 from "COMPONENTS/tools/base64";
 
 const Item = Navigation.Item;
 
@@ -22,9 +23,10 @@ const routes = [
   { path: "/Params/Complex", key: "1-0-2", name: "复合参数", parent: "1-0" },
   { path: "/Content/Image", key: "2-0", name: "内容管理", icon: "image-text", parent: false },
   { path: "/Content/Image", key: "2-0-1", name: "图片管理", parent: "2-0" },
-  { path: "/tools", key: "3-0", name: "开发工具", icon: "box", parent: false },
-  { path: "/tools/crypt", key: "3-0-1", name: "加密/解密", parent: "3-0", isMenu: true },
-  { path: "/tools/crypt/unicode", key: "3-0-1-1", name: "Unicode中文转换", parent: "3-0-1" }
+  { path: "/tools/unicode", key: "3-0", name: "开发工具", icon: "box", parent: false },
+  { path: "/tools/unicode", key: "3-0-1", name: "编码解码", parent: "3-0", isMenu: true },
+  { path: "/tools/unicode", key: "3-0-1-1", name: "Unicode中文转换", parent: "3-0-1" },
+  { path: "/tools/base64", key: "3-0-1-2", name: "BASE64", parent: "3-0-1" }
 ];
 
 const styles = {
@@ -118,7 +120,8 @@ class App extends React.Component {
             <Route path="/Params/Hash" component={HashParamList} />
             <Route path="/Params/Complex" component={ComplexParamList} />
             <Route path="/Content/Image" component={ImageIndex} />
-            <Route path="/Tools/Crypt" component={UnicodeChs} />            
+            <Route path="/tools/unicode" component={UnicodeChs} />  
+            <Route path="/tools/base64" component={Base64}/>          
           </section>
         </div>
       </div>

@@ -31,17 +31,18 @@ if (debug) {
             from: path.resolve(__dirname, "dist"),
             to: path.resolve(__dirname, "public")
         }], {
-            copyUnmodified: true
+            copyUnmodified: false
         })
     );
 }
 
-const vender = ['babel-polyfill', 'react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react', 'mobx-utils', 'react-addons-transition-group', 'moment', 'qnui'];
+var vender = ['babel-polyfill', 'react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react', 'mobx-utils', 'react-addons-transition-group', 'moment', 'qnui'];
+if(debug) vender.push('react-hot-loader/patch', 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000');
 
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        vender: debug ? vender.push['react-hot-loader/patch', 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'] : vender
+        vender: vender
     },
     output: {
         path: path.resolve(__dirname, "dist"),

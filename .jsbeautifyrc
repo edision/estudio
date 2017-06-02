@@ -1,6 +1,5 @@
 {
-  "brace_style": "none,preserve-inline",
-  "css": {
-    "preserve_newlines": true
-  } 
+    "brace_style": "none,preserve-inline",
+    "preserve_newlines": true,
+    "keep_array_indentation": true
 }
