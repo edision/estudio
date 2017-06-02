@@ -39,3 +39,5 @@ jspm_packages
 /yarn.lock
 /.yarnclean
 /*.log
+/dist
+/public
