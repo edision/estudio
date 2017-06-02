@@ -71,6 +71,7 @@ body,
 }
 
 
+
 /*部件*/
 
 .tab-group {
@@ -124,12 +125,14 @@ body,
 }
 
 
+
 /*.next-navigation a, .next-navigation a:hover, .next-navigation a:link, .next-navigation a:visited{
     color: #FFF;
 }*/
 
 
 /*覆盖qnui*/
+
 
 /*.qn-loading-inline {
     position: relative;
@@ -143,9 +146,11 @@ body,
     height: 40px;
 }*/
 
-.next-navigation-tree .next-navigation-item-custom-icon:before, .next-navigation-tree .next-navigation-item-leaf-icon:before{line-height: inherit;}
+.next-navigation-tree .next-navigation-item-custom-icon:before,
+.next-navigation-tree .next-navigation-item-leaf-icon:before {
+    line-height: inherit;
+}
 
 .pull-right {
     float: right;
 }
-
