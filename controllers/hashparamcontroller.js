@@ -24,7 +24,7 @@ class SysHashParamController {
         console.log('更新哈希参数-->', data);
         await next();
         try {
-            await db.SysHashParam.update({_id: data._id}, data);
+            await db.SysHashParam.update({ _id: data._id }, data);
             ctx.body = { isOk: true }
         } catch (error) {
             console.error(error)
@@ -50,7 +50,7 @@ class SysHashParamController {
         console.log(ids);
         await next();
         try {
-            await db.SysHashParam.remove({_id: {$in: ids}});
+            await db.SysHashParam.remove({ _id: { $in: ids } });
             ctx.body = { isOk: true }
         } catch (error) {
             console.error(error)
@@ -68,7 +68,6 @@ class SysHashParamController {
         const pageIndex = qp.pageIndex;
         const pageSize = qp.pageSize;
         const filter = qp.filter || '';
-        await next();
 
         let query = {};
         if (filter.length > 0) {

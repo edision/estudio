@@ -3,7 +3,8 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/node_modules/**": true,
-    "**/dist/*": true
+    "**/dist/*": true,
+    "**/public/*": true
   },
   "files.exclude": {
     "**/.git": true,
@@ -12,6 +13,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "yarn.lock":true,
-    ".yarnclean":true    
+    ".yarnclean":true,
+    "**/dist":true
   }
 }

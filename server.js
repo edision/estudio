@@ -84,6 +84,8 @@ app.listen(PORT, function() {
     console.log(`Web服务器已启动。访问地址: http://localhost:${PORT}`);
 });
 
-
+process.addListener('error', function(err){
+    console.error(err);
+});
 
 export default app;
