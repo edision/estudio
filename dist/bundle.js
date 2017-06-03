@@ -1663,7 +1663,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "/*layout*/\r\n\r\n.main,\r\nbody,\r\n#app {\r\n    background: #EDF0F2;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.container {\r\n    padding: 0;\r\n    margin: 0;\r\n    border: none;\r\n}\r\n\r\n.header {\r\n    position: fixed;\r\n    top: 0;\r\n    height: 52px;\r\n    width: 100%;\r\n    z-index: 10;\r\n}\r\n\r\n.main-container {\r\n    position: relative;\r\n    background: #EDF0F2;\r\n    top: 52px;\r\n    padding-bottom: 24px;\r\n    overflow: hidden;\r\n}\r\n\r\n.sidebar-container {\r\n    position: fixed;\r\n    background: #FFF;\r\n    width: 200px;\r\n    height: 100%;\r\n    padding-bottom: 100px;\r\n    z-index: 1002;\r\n    overflow-x: hidden;\r\n    overflow-y: overlay;\r\n}\r\n\r\n.content-container {\r\n    margin-left: 200px;\r\n    padding-bottom: 120px;\r\n    background: #EDF0F2;\r\n    min-height: 85vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.inner-container {\r\n    padding: 8px;\r\n    margin: 12px;\r\n    background: #FFF;\r\n}\r\n\r\n.inner-wrapper {\r\n    margin-top: 12px;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\r\n    background: #FFF;\r\n    text-align: center;\r\n}\r\n\r\n\r\n\r\n/*部件*/\r\n\r\n.tab-group {\r\n    position: fixed;\r\n    z-index: 1002;\r\n    top: 52px;\r\n    width: 100%;\r\n    left: 200px;\r\n    height: 48px;\r\n    line-height: 48px;\r\n    background: white;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-flex-direction: row;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n}\r\n\r\n.tab-group>a:first {\r\n    margin-left: 12px;\r\n}\r\n\r\n.tab-group>a {\r\n    display: block;\r\n    padding: 0 17px;\r\n}\r\n\r\n.tab-group>.current {\r\n    border-bottom: 2px solid #0894EC;\r\n}\r\n\r\n\r\n.overlay-center {\r\n    border: 1px solid #999;\r\n    background: #333;\r\n    padding: 10px;\r\n    text-align: center;\r\n    width: 200px;\r\n    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);\r\n    border-radius: 4px;\r\n    opacity: 0.7\r\n}\r\n\r\n.overlay-center .text {\r\n    margin-left: 8px;\r\n    margin-top: -4px;\r\n    line-height: 60px;\r\n    color: #FFF;\r\n    font-size: 24px;\r\n}\r\n\r\n\r\n\r\n/*.next-navigation a, .next-navigation a:hover, .next-navigation a:link, .next-navigation a:visited{\r\n    color: #FFF;\r\n}*/\r\n\r\n\r\n/*覆盖qnui*/\r\n\r\n\r\n/*.qn-loading-inline {\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 32px;\r\n    height: 32px;\r\n}\r\n\r\n.qn-loading-inline-large {\r\n    width: 40px;\r\n    height: 40px;\r\n}*/\r\n\r\n.next-navigation-tree .next-navigation-item-custom-icon:before,\r\n.next-navigation-tree .next-navigation-item-leaf-icon:before {\r\n    line-height: inherit;\r\n}\r\n\r\n.pull-right {\r\n    float: right;\r\n}\r\n", ""]);
+exports.push([module.i, "/*layout*/\r\n\r\n.main,\r\nbody,\r\n#app {\r\n    background: #EDF0F2;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.container {\r\n    padding: 0;\r\n    margin: 0;\r\n    border: none;\r\n}\r\n\r\n.header {\r\n    position: fixed;\r\n    top: 0;\r\n    height: 52px;\r\n    width: 100%;\r\n    z-index: 10;\r\n}\r\n\r\n.main-container {\r\n    position: relative;\r\n    background: #EDF0F2;\r\n    top: 52px;\r\n    padding-bottom: 24px;\r\n    overflow: hidden;\r\n}\r\n\r\n.sidebar-container {\r\n    position: fixed;\r\n    background: #FFF;\r\n    width: 200px;\r\n    height: 100%;\r\n    padding-bottom: 100px;\r\n    z-index: 1002;\r\n    overflow-x: hidden;\r\n    overflow-y: overlay;\r\n}\r\n\r\n.content-container {\r\n    margin-left: 200px;\r\n    padding-bottom: 120px;\r\n    background: #EDF0F2;\r\n    min-height: 85vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.inner-container {\r\n    padding: 8px;\r\n    margin: 12px;\r\n    background: #FFF;\r\n}\r\n\r\n.inner-wrapper {\r\n    margin-top: 12px;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100%;\r\n    background: #FFF;\r\n    text-align: center;\r\n}\r\n\r\n.tab-group {\r\n    position: fixed;\r\n    z-index: 1002;\r\n    top: 52px;\r\n    width: 100%;\r\n    left: 200px;\r\n    height: 48px;\r\n    line-height: 48px;\r\n    background: white;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-flex-direction: row;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n}\r\n\r\n.tab-group>a:first {\r\n    margin-left: 12px;\r\n}\r\n\r\n.tab-group>a {\r\n    display: block;\r\n    padding: 0 17px;\r\n}\r\n\r\n.tab-group>.current {\r\n    border-bottom: 2px solid #0894EC;\r\n}\r\n\r\n\r\n.overlay-center {\r\n    border: 1px solid #999;\r\n    background: #333;\r\n    padding: 10px;\r\n    text-align: center;\r\n    width: 200px;\r\n    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);\r\n    border-radius: 4px;\r\n    opacity: 0.7\r\n}\r\n\r\n.overlay-center .text {\r\n    margin-left: 8px;\r\n    margin-top: -4px;\r\n    line-height: 60px;\r\n    color: #FFF;\r\n    font-size: 24px;\r\n}\r\n\r\n.next-navigation-tree .next-navigation-item-custom-icon:before,\r\n.next-navigation-tree .next-navigation-item-leaf-icon:before {\r\n    line-height: inherit;\r\n}\r\n\r\n.pull-right {\r\n    float: right;\r\n}\r\n", ""]);
 
 // exports
 
@@ -2051,13 +2051,6 @@ module.exports = __webpack_require__("./node_modules/qnui/lib/_components/@alife
 
 /***/ }),
 
-/***/ "./node_modules/qnui/lib/Loading/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./node_modules/qnui/lib/_components/@alife/qn-loading/lib/index.js");
-
-/***/ }),
-
 /***/ "./node_modules/qnui/lib/Menu/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2069,13 +2062,6 @@ module.exports = __webpack_require__("./node_modules/qnui/lib/_components/@alife
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./node_modules/qnui/lib/_components/@alife/qn-navigation/lib/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/qnui/lib/Overlay/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./node_modules/qnui/lib/_components/@alife/next-overlay/lib/index.js");
 
 /***/ }),
 
@@ -20065,223 +20051,6 @@ if (canUseDOM()) {
 
 /***/ }),
 
-/***/ "./node_modules/qnui/lib/_components/@alife/qn-loading/lib/basic.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _class, _temp;
-
-var _react = __webpack_require__("./node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactSpin = __webpack_require__("./node_modules/react-spin/lib/main.js");
-
-var _reactSpin2 = _interopRequireDefault(_reactSpin);
-
-var _classnames = __webpack_require__("./node_modules/classnames/index.js");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
-
-var BasicLoading = (_temp = _class = function (_React$Component) {
-    _inherits(BasicLoading, _React$Component);
-
-    function BasicLoading(props, context) {
-        _classCallCheck(this, BasicLoading);
-
-        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
-
-        var prefix = props.prefix,
-            type = props.type,
-            size = props.size;
-
-        _this.typeName = prefix + '-' + type;
-        _this.sizeName = _this.typeName + '-' + size;
-        _this.className = (0, _classnames2['default'])(_this.typeName, _this.sizeName);
-        _this.spinConfig = {
-            lines: 15, // The number of lines to draw
-            length: 14, // The length of each line
-            width: 2, // The line thickness
-            radius: 0, // The radius of the inner circle
-            scale: 1, // Scales overall size of the spinner
-            corners: 1, // Corner roundness (0..1)
-            color: '#c7c7c7', // #rgb or #rrggbb or array of colors
-            opacity: 0.05, // Opacity of the lines
-            rotate: 0, // The rotation offset
-            direction: 1, // 1: clockwise, -1: counterclockwise
-            speed: 1.1, // Rounds per second
-            trail: 50, // Afterglow percentage
-            fps: 20, // Frames per second when using setTimeout() as a fallback for CSS
-            zIndex: 2e9, // The z-index (defaults to 2000000000)
-            className: 'spinner', // The CSS class to assign to the spinner
-            top: '50%', // Top position relative to parent
-            left: '50%', // Left position relative to parent
-            shadow: false, // Whether to render a shadow
-            hwaccel: false, // Whether to use hardware acceleration
-            position: 'absolute' // Element positioning
-        };
-        return _this;
-    }
-
-    BasicLoading.prototype.render = function render() {
-        var _props = this.props,
-            type = _props.type,
-            size = _props.size,
-            color = _props.color,
-            speed = _props.speed,
-            opacity = _props.opacity;
-
-        var baseConfig = {};
-        switch (size) {
-            case 'large':
-                baseConfig = {
-                    lines: 15,
-                    length: 18,
-                    scale: 1
-                };
-                break;
-            case 'small':
-                baseConfig = {
-                    lines: 13,
-                    length: 18,
-                    scale: 0.5
-                };
-                break;
-            default:
-                break;
-
-        }
-        color ? baseConfig.color = color : null;
-        speed ? baseConfig.speed = speed : null;
-        opacity ? baseConfig.opacity = opacity : null;
-        this.config = _extends(this.spinConfig, baseConfig);
-
-        return _react2['default'].createElement(
-            'div',
-            { className: this.className },
-            _react2['default'].createElement(_reactSpin2['default'], { config: this.config })
-        );
-    };
-
-    return BasicLoading;
-}(_react2['default'].Component), _class.propTypes = {
-    prefix: _react.PropTypes.string,
-    type: _react.PropTypes.string,
-    size: _react.PropTypes.string,
-    show: _react.PropTypes.bool
-}, _class.defaultProps = {
-    prefix: 'qn-loading',
-    size: 'medium',
-    show: false
-}, _temp);
-BasicLoading.displayName = 'BasicLoading';
-exports['default'] = BasicLoading;
-module.exports = exports['default'];
-
-/***/ }),
-
-/***/ "./node_modules/qnui/lib/_components/@alife/qn-loading/lib/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _class, _temp;
-
-var _react = __webpack_require__("./node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = __webpack_require__("./node_modules/classnames/index.js");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _basic = __webpack_require__("./node_modules/qnui/lib/_components/@alife/qn-loading/lib/basic.js");
-
-var _basic2 = _interopRequireDefault(_basic);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
-
-var Loading = (_temp = _class = function (_React$Component) {
-    _inherits(Loading, _React$Component);
-
-    function Loading(props, context) {
-        _classCallCheck(this, Loading);
-
-        return _possibleConstructorReturn(this, _React$Component.call(this, props, context));
-    }
-
-    Loading.prototype.render = function render() {
-        var _props = this.props,
-            type = _props.type,
-            show = _props.show;
-
-        if (!show) return null;
-        if (!type) return _react2['default'].createElement(_basic2['default'], this.props);
-        switch (type.toLowerCase()) {
-            case 'basic':
-                return _react2['default'].createElement(_basic2['default'], this.props);
-            case 'circle':
-                return _react2['default'].createElement(CircleLoading, this.props);
-            default:
-                return _react2['default'].createElement(_basic2['default'], this.props);
-        }
-    };
-
-    return Loading;
-}(_react2['default'].Component), _class.propTypes = {
-    prefix: _react.PropTypes.string,
-    type: _react.PropTypes.string,
-    size: _react.PropTypes.string,
-    show: _react.PropTypes.bool,
-    speend: _react.PropTypes.number,
-    color: _react.PropTypes.string,
-    opacity: _react.PropTypes.number
-}, _class.defaultProps = {
-    prefix: 'qn-loading',
-    type: 'basic',
-    size: 'medium',
-    show: true,
-    speend: 1.1,
-    color: '#c7c7c7',
-    opacity: 0.05
-}, _temp);
-Loading.displayName = 'Loading';
-exports['default'] = Loading;
-module.exports = exports['default'];
-
-/***/ }),
-
 /***/ "./node_modules/qnui/lib/_components/@alife/qn-navigation/lib/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20574,60 +20343,6 @@ if (!module.hot || process.env.NODE_ENV === 'production') {
 
 
 module.exports.AppContainer = __webpack_require__("./node_modules/react-hot-loader/lib/AppContainer.js");
-
-/***/ }),
-
-/***/ "./node_modules/react-spin/lib/main.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _react = __webpack_require__("./node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _spin = __webpack_require__("./node_modules/spin.js/spin.js");
-
-var _spin2 = _interopRequireDefault(_spin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var ReactSpinner = _react2.default.createClass({
-  displayName: 'ReactSpinner',
-
-  propTypes: {
-    config: _react2.default.PropTypes.object,
-    stopped: _react2.default.PropTypes.bool
-  },
-
-  componentDidMount: function componentDidMount() {
-    this.spinner = new _spin2.default(this.props.config);
-    if (!this.props.stopped) {
-      this.spinner.spin(this.refs.container);
-    }
-  },
-
-  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    if (newProps.stopped === true && !this.props.stopped) {
-      this.spinner.stop();
-    } else if (!newProps.stopped && this.props.stopped === true) {
-      this.spinner.spin(this.refs.container);
-    }
-  },
-
-  componentWillUnmount: function componentWillUnmount() {
-    this.spinner.stop();
-  },
-
-  render: function render() {
-    return _react2.default.createElement('span', { ref: 'container' });
-  }
-});
-
-exports.default = ReactSpinner;
 
 /***/ }),
 
@@ -23970,394 +23685,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 
-/***/ "./node_modules/spin.js/spin.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * Copyright (c) 2011-2014 Felix Gnass
- * Licensed under the MIT license
- * http://spin.js.org/
- *
- * Example:
-    var opts = {
-      lines: 12             // The number of lines to draw
-    , length: 7             // The length of each line
-    , width: 5              // The line thickness
-    , radius: 10            // The radius of the inner circle
-    , scale: 1.0            // Scales overall size of the spinner
-    , corners: 1            // Roundness (0..1)
-    , color: '#000'         // #rgb or #rrggbb
-    , opacity: 1/4          // Opacity of the lines
-    , rotate: 0             // Rotation offset
-    , direction: 1          // 1: clockwise, -1: counterclockwise
-    , speed: 1              // Rounds per second
-    , trail: 100            // Afterglow percentage
-    , fps: 20               // Frames per second when using setTimeout()
-    , zIndex: 2e9           // Use a high z-index by default
-    , className: 'spinner'  // CSS class to assign to the element
-    , top: '50%'            // center vertically
-    , left: '50%'           // center horizontally
-    , shadow: false         // Whether to render a shadow
-    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-    , position: 'absolute'  // Element positioning
-    }
-    var target = document.getElementById('foo')
-    var spinner = new Spinner(opts).spin(target)
- */
-;(function (root, factory) {
-
-  /* CommonJS */
-  if (typeof module == 'object' && module.exports) module.exports = factory()
-
-  /* AMD module */
-  else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
-				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-
-  /* Browser global */
-  else root.Spinner = factory()
-}(this, function () {
-  "use strict"
-
-  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
-    , animations = {} /* Animation rules keyed by their name */
-    , useCssAnimations /* Whether to use CSS animations or setTimeout */
-    , sheet /* A stylesheet to hold the @keyframe or VML rules. */
-
-  /**
-   * Utility function to create elements. If no tag name is given,
-   * a DIV is created. Optionally properties can be passed.
-   */
-  function createEl (tag, prop) {
-    var el = document.createElement(tag || 'div')
-      , n
-
-    for (n in prop) el[n] = prop[n]
-    return el
-  }
-
-  /**
-   * Appends children and returns the parent.
-   */
-  function ins (parent /* child1, child2, ...*/) {
-    for (var i = 1, n = arguments.length; i < n; i++) {
-      parent.appendChild(arguments[i])
-    }
-
-    return parent
-  }
-
-  /**
-   * Creates an opacity keyframe animation rule and returns its name.
-   * Since most mobile Webkits have timing issues with animation-delay,
-   * we create separate rules for each line/segment.
-   */
-  function addAnimation (alpha, trail, i, lines) {
-    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-')
-      , start = 0.01 + i/lines * 100
-      , z = Math.max(1 - (1-alpha) / trail * (100-start), alpha)
-      , prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase()
-      , pre = prefix && '-' + prefix + '-' || ''
-
-    if (!animations[name]) {
-      sheet.insertRule(
-        '@' + pre + 'keyframes ' + name + '{' +
-        '0%{opacity:' + z + '}' +
-        start + '%{opacity:' + alpha + '}' +
-        (start+0.01) + '%{opacity:1}' +
-        (start+trail) % 100 + '%{opacity:' + alpha + '}' +
-        '100%{opacity:' + z + '}' +
-        '}', sheet.cssRules.length)
-
-      animations[name] = 1
-    }
-
-    return name
-  }
-
-  /**
-   * Tries various vendor prefixes and returns the first supported property.
-   */
-  function vendor (el, prop) {
-    var s = el.style
-      , pp
-      , i
-
-    prop = prop.charAt(0).toUpperCase() + prop.slice(1)
-    if (s[prop] !== undefined) return prop
-    for (i = 0; i < prefixes.length; i++) {
-      pp = prefixes[i]+prop
-      if (s[pp] !== undefined) return pp
-    }
-  }
-
-  /**
-   * Sets multiple style properties at once.
-   */
-  function css (el, prop) {
-    for (var n in prop) {
-      el.style[vendor(el, n) || n] = prop[n]
-    }
-
-    return el
-  }
-
-  /**
-   * Fills in default values.
-   */
-  function merge (obj) {
-    for (var i = 1; i < arguments.length; i++) {
-      var def = arguments[i]
-      for (var n in def) {
-        if (obj[n] === undefined) obj[n] = def[n]
-      }
-    }
-    return obj
-  }
-
-  /**
-   * Returns the line color from the given string or array.
-   */
-  function getColor (color, idx) {
-    return typeof color == 'string' ? color : color[idx % color.length]
-  }
-
-  // Built-in defaults
-
-  var defaults = {
-    lines: 12             // The number of lines to draw
-  , length: 7             // The length of each line
-  , width: 5              // The line thickness
-  , radius: 10            // The radius of the inner circle
-  , scale: 1.0            // Scales overall size of the spinner
-  , corners: 1            // Roundness (0..1)
-  , color: '#000'         // #rgb or #rrggbb
-  , opacity: 1/4          // Opacity of the lines
-  , rotate: 0             // Rotation offset
-  , direction: 1          // 1: clockwise, -1: counterclockwise
-  , speed: 1              // Rounds per second
-  , trail: 100            // Afterglow percentage
-  , fps: 20               // Frames per second when using setTimeout()
-  , zIndex: 2e9           // Use a high z-index by default
-  , className: 'spinner'  // CSS class to assign to the element
-  , top: '50%'            // center vertically
-  , left: '50%'           // center horizontally
-  , shadow: false         // Whether to render a shadow
-  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-  , position: 'absolute'  // Element positioning
-  }
-
-  /** The constructor */
-  function Spinner (o) {
-    this.opts = merge(o || {}, Spinner.defaults, defaults)
-  }
-
-  // Global defaults that override the built-ins:
-  Spinner.defaults = {}
-
-  merge(Spinner.prototype, {
-    /**
-     * Adds the spinner to the given target element. If this instance is already
-     * spinning, it is automatically removed from its previous target b calling
-     * stop() internally.
-     */
-    spin: function (target) {
-      this.stop()
-
-      var self = this
-        , o = self.opts
-        , el = self.el = createEl(null, {className: o.className})
-
-      css(el, {
-        position: o.position
-      , width: 0
-      , zIndex: o.zIndex
-      , left: o.left
-      , top: o.top
-      })
-
-      if (target) {
-        target.insertBefore(el, target.firstChild || null)
-      }
-
-      el.setAttribute('role', 'progressbar')
-      self.lines(el, self.opts)
-
-      if (!useCssAnimations) {
-        // No CSS animation support, use setTimeout() instead
-        var i = 0
-          , start = (o.lines - 1) * (1 - o.direction) / 2
-          , alpha
-          , fps = o.fps
-          , f = fps / o.speed
-          , ostep = (1 - o.opacity) / (f * o.trail / 100)
-          , astep = f / o.lines
-
-        ;(function anim () {
-          i++
-          for (var j = 0; j < o.lines; j++) {
-            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
-
-            self.opacity(el, j * o.direction + start, alpha, o)
-          }
-          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps))
-        })()
-      }
-      return self
-    }
-
-    /**
-     * Stops and removes the Spinner.
-     */
-  , stop: function () {
-      var el = this.el
-      if (el) {
-        clearTimeout(this.timeout)
-        if (el.parentNode) el.parentNode.removeChild(el)
-        this.el = undefined
-      }
-      return this
-    }
-
-    /**
-     * Internal method that draws the individual lines. Will be overwritten
-     * in VML fallback mode below.
-     */
-  , lines: function (el, o) {
-      var i = 0
-        , start = (o.lines - 1) * (1 - o.direction) / 2
-        , seg
-
-      function fill (color, shadow) {
-        return css(createEl(), {
-          position: 'absolute'
-        , width: o.scale * (o.length + o.width) + 'px'
-        , height: o.scale * o.width + 'px'
-        , background: color
-        , boxShadow: shadow
-        , transformOrigin: 'left'
-        , transform: 'rotate(' + ~~(360/o.lines*i + o.rotate) + 'deg) translate(' + o.scale*o.radius + 'px' + ',0)'
-        , borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
-        })
-      }
-
-      for (; i < o.lines; i++) {
-        seg = css(createEl(), {
-          position: 'absolute'
-        , top: 1 + ~(o.scale * o.width / 2) + 'px'
-        , transform: o.hwaccel ? 'translate3d(0,0,0)' : ''
-        , opacity: o.opacity
-        , animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
-        })
-
-        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), {top: '2px'}))
-        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')))
-      }
-      return el
-    }
-
-    /**
-     * Internal method that adjusts the opacity of a single line.
-     * Will be overwritten in VML fallback mode below.
-     */
-  , opacity: function (el, i, val) {
-      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val
-    }
-
-  })
-
-
-  function initVML () {
-
-    /* Utility function to create a VML tag */
-    function vml (tag, attr) {
-      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr)
-    }
-
-    // No CSS transforms but VML support, add a CSS rule for VML elements:
-    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)')
-
-    Spinner.prototype.lines = function (el, o) {
-      var r = o.scale * (o.length + o.width)
-        , s = o.scale * 2 * r
-
-      function grp () {
-        return css(
-          vml('group', {
-            coordsize: s + ' ' + s
-          , coordorigin: -r + ' ' + -r
-          })
-        , { width: s, height: s }
-        )
-      }
-
-      var margin = -(o.width + o.length) * o.scale * 2 + 'px'
-        , g = css(grp(), {position: 'absolute', top: margin, left: margin})
-        , i
-
-      function seg (i, dx, filter) {
-        ins(
-          g
-        , ins(
-            css(grp(), {rotation: 360 / o.lines * i + 'deg', left: ~~dx})
-          , ins(
-              css(
-                vml('roundrect', {arcsize: o.corners})
-              , { width: r
-                , height: o.scale * o.width
-                , left: o.scale * o.radius
-                , top: -o.scale * o.width >> 1
-                , filter: filter
-                }
-              )
-            , vml('fill', {color: getColor(o.color, i), opacity: o.opacity})
-            , vml('stroke', {opacity: 0}) // transparent stroke to fix color bleeding upon opacity change
-            )
-          )
-        )
-      }
-
-      if (o.shadow)
-        for (i = 1; i <= o.lines; i++) {
-          seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)')
-        }
-
-      for (i = 1; i <= o.lines; i++) seg(i)
-      return ins(el, g)
-    }
-
-    Spinner.prototype.opacity = function (el, i, val, o) {
-      var c = el.firstChild
-      o = o.shadow && o.lines || 0
-      if (c && i + o < c.childNodes.length) {
-        c = c.childNodes[i + o]; c = c && c.firstChild; c = c && c.firstChild
-        if (c) c.opacity = val
-      }
-    }
-  }
-
-  if (typeof document !== 'undefined') {
-    sheet = (function () {
-      var el = createEl('style', {type : 'text/css'})
-      ins(document.getElementsByTagName('head')[0], el)
-      return el.sheet || el.styleSheet
-    }())
-
-    var probe = css(createEl('group'), {behavior: 'url(#default#VML)'})
-
-    if (!vendor(probe, 'transform') && probe.adj) initVML()
-    else useCssAnimations = vendor(probe, 'animation')
-  }
-
-  return Spinner
-
-}));
-
-
-/***/ }),
-
 /***/ "./node_modules/stackframe/stackframe.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24868,7 +24195,7 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/components/App.jsx":
+/***/ "./src/components/App.dev.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24879,6 +24206,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _class;
+// components
+
+//shared
+
 
 var _react = __webpack_require__("./node_modules/react/react.js");
 
@@ -24900,10 +24231,6 @@ var _Icon = __webpack_require__("./node_modules/qnui/lib/Icon/index.js");
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _Loading = __webpack_require__("./src/components/shared/Loading.jsx");
-
-var _Loading2 = _interopRequireDefault(_Loading);
-
 var _TopNavigation = __webpack_require__("./src/components/shared/TopNavigation.jsx");
 
 var _TopNavigation2 = _interopRequireDefault(_TopNavigation);
@@ -24912,34 +24239,19 @@ var _LeftNavigation = __webpack_require__("./src/components/shared/LeftNavigatio
 
 var _LeftNavigation2 = _interopRequireDefault(_LeftNavigation);
 
-var _List = __webpack_require__("./src/components/hashparam/List.jsx");
+var _BackTop = __webpack_require__("./src/components/shared/BackTop.jsx");
 
-var _List2 = _interopRequireDefault(_List);
+var _BackTop2 = _interopRequireDefault(_BackTop);
 
-var _List3 = __webpack_require__("./src/components/complexparam/List.jsx");
-
-var _List4 = _interopRequireDefault(_List3);
-
-var _Index = __webpack_require__("./src/components/image/Index.jsx");
-
-var _Index2 = _interopRequireDefault(_Index);
-
-var _unicode = __webpack_require__("./src/components/tools/unicode.jsx");
-
-var _unicode2 = _interopRequireDefault(_unicode);
+var _routes = __webpack_require__("./src/routes.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// components
 if (true) var DevTools = __webpack_require__("./node_modules/mobx-react-devtools/index.js").default;
-//shared
-
-//菜单
+//
 
 
 const Item = _Navigation2.default.Item;
-
-const routes = [{ path: "/", key: "1-0", name: "参数管理", icon: "text", parent: false }, { path: "/Params/Hash", key: "1-0-1", name: "哈希参数", parent: "1-0" }, { path: "/Params/Complex", key: "1-0-2", name: "复合参数", parent: "1-0" }, { path: "/Content/Image", key: "2-0", name: "内容管理", icon: "image-text", parent: false }, { path: "/Content/Image", key: "2-0-1", name: "图片管理", parent: "2-0" }, { path: "/tools", key: "3-0", name: "开发工具", icon: "box", parent: false }, { path: "/tools/", key: "3-0-1", name: "编码解码", parent: "3-0", isMenu: true }, { path: "/tools/unicode", key: "3-0-1-1", name: "Unicode中文转换", parent: "3-0-1" }];
 
 const styles = {
   leftNav: { maxWidth: "200px" }
@@ -24951,9 +24263,9 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
 
     return _temp = super(...args), this.state = { selectedKey: "1-0-1", parentKey: '1-0', topSelectedKey: "1-0" }, this.handleTopNavItemClick = (key, item) => {
       const selectedKey = `${key}-1`;
-      let route = routes.find(r => r.key === selectedKey);
+      let route = _routes.routes.find(r => r.key === selectedKey);
       if (route) {
-        const parent = routes.find(r => r.key === route.parent);
+        const parent = _routes.routes.find(r => r.key === route.parent);
         let topKey = key;
         if (parent && parent.isMenu) {
           topKey = parent.parent;
@@ -24962,9 +24274,9 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
         this.props.history.push(route.path);
       }
     }, this.handleLeftNavItemClick = (key, item) => {
-      const route = routes.find(r => r.key === key);
+      const route = _routes.routes.find(r => r.key === key);
       if (route) {
-        const parent = routes.find(r => r.key === route.parent);
+        const parent = _routes.routes.find(r => r.key === route.parent);
         let topKey = route.parent;
         if (parent && parent.isMenu) {
           topKey = parent.parent;
@@ -24979,8 +24291,8 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
       }
     }, this.renderTopNav = () => {
       const { selectedKey, parentKey } = this.state;
-      return routes.filter(r => !r.parent).map(r => {
-        const subMenu = routes.filter(sub => sub.isMenu && sub.parent === r.key);
+      return _routes.routes.filter(r => !r.parent).map(r => {
+        const subMenu = _routes.routes.filter(sub => sub.isMenu && sub.parent === r.key);
         if (subMenu.length > 0) {
           return _react2.default.createElement(
             Item,
@@ -24999,7 +24311,7 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
       });
     }, this.renderLeftNav = () => {
       const { parentKey, selectedKey } = this.state;
-      const parent = routes.find(r => r.key === parentKey);
+      const parent = _routes.routes.find(r => r.key === parentKey);
       if (parent.isMenu) {
         return _react2.default.createElement(
           Item,
@@ -25007,11 +24319,11 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
           _react2.default.createElement(
             _Navigation2.default,
             null,
-            routes.filter(r => r.parent === parentKey).map(r => _react2.default.createElement(Item, { selected: r.key === selectedKey, key: r.key, text: r.name, onClick: this.handleLeftNavItemClick }))
+            _routes.routes.filter(r => r.parent === parentKey).map(r => _react2.default.createElement(Item, { selected: r.key === selectedKey, key: r.key, text: r.name, onClick: this.handleLeftNavItemClick }))
           )
         );
       }
-      return routes.filter(r => r.parent === parentKey).map(r => _react2.default.createElement(Item, { selected: r.key === selectedKey, key: r.key, text: r.name, onClick: this.handleLeftNavItemClick }));
+      return _routes.routes.filter(r => r.parent === parentKey).map(r => _react2.default.createElement(Item, { selected: r.key === selectedKey, key: r.key, text: r.name, onClick: this.handleLeftNavItemClick }));
     }, _temp;
   }
 
@@ -25026,11 +24338,11 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
       _react2.default.createElement(
         "header",
         { className: "header" },
-        _react2.default.createElement(_TopNavigation2.default, { title: "EStudio\u60F3", defaultSelectedKey: this.state.topSelectedKey, items: topItems })
+        _react2.default.createElement(_TopNavigation2.default, { title: "EStudioxx", defaultSelectedKey: this.state.topSelectedKey, items: topItems })
       ),
       _react2.default.createElement(
         "div",
-        { className: "main-container" },
+        { className: "main-container", onScroll: this.handleScroll },
         _react2.default.createElement(
           "aside",
           { className: "sidebar-container" },
@@ -25039,13 +24351,10 @@ let App = (0, _reactRouterDom.withRouter)(_class = (0, _mobxReact.observer)(_cla
         _react2.default.createElement(
           "section",
           { className: "content-container" },
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _List2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: "/Params/Hash", component: _List2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: "/Params/Complex", component: _List4.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: "/Content/Image", component: _Index2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: "/Tools/Crypt", component: _unicode2.default })
+          _routes.route
         )
-      )
+      ),
+      _react2.default.createElement(_BackTop2.default, null)
     );
   }
 }) || _class) || _class;
@@ -25619,6 +24928,86 @@ exports.default = ImageIndex;
 
 /***/ }),
 
+/***/ "./src/components/shared/BackTop.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Button = __webpack_require__("./node_modules/qnui/lib/Button/index.js");
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Icon = __webpack_require__("./node_modules/qnui/lib/Icon/index.js");
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const styles = {
+  backTop: {
+    position: "fixed",
+    bottom: "20px",
+    right: "20px",
+    width: "64px",
+    height: "64px",
+    textAlign: "center",
+    background: "#000",
+    opacity: 0.7,
+    borderRadius: 4,
+    cursor: "hand"
+  },
+  p: {
+    fontSize: "24px",
+    marginTop: "8px"
+  }
+};
+
+let BackTop = class BackTop extends _react2.default.PureComponent {
+  constructor(...args) {
+    var _temp;
+
+    return _temp = super(...args), this.state = { visible: false }, this.handleScroll = e => {
+      this.setState({ visible: window.pageYOffset > 100 });
+    }, this.handleBackTop = e => {
+      e.preventDefault();
+      window.scroll(0, 0);
+    }, _temp;
+  } // 使用PureComponent处理基本类型state，props比较
+
+
+  componentDidMount() {
+    window.onscroll = this.handleScroll;
+  }
+
+  render() {
+    if (this.state.visible) {
+      return _react2.default.createElement(
+        'div',
+        { style: styles.backTop, onClick: this.handleBackTop },
+        _react2.default.createElement(_Icon2.default, { type: 'arrow-up', size: 'large' }),
+        _react2.default.createElement(
+          'p',
+          { style: styles.p },
+          'TOP'
+        )
+      );
+    }
+    return null;
+  }
+};
+exports.default = BackTop;
+
+/***/ }),
+
 /***/ "./src/components/shared/LeftNavigation.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25653,58 +25042,6 @@ let LeftNavigation = class LeftNavigation extends _react2.default.Component {
   }
 };
 exports.default = LeftNavigation;
-
-/***/ }),
-
-/***/ "./src/components/shared/Loading.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__("./node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _mobxReact = __webpack_require__("./node_modules/mobx-react/index.js");
-
-var _Overlay = __webpack_require__("./node_modules/qnui/lib/Overlay/index.js");
-
-var _Overlay2 = _interopRequireDefault(_Overlay);
-
-var _Loading = __webpack_require__("./node_modules/qnui/lib/Loading/index.js");
-
-var _Loading2 = _interopRequireDefault(_Loading);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// componets
-let LoadingOverlay = class LoadingOverlay extends _react2.default.Component {
-  render() {
-    return _react2.default.createElement(
-      _Overlay2.default,
-      { visible: this.props.isLoading,
-        hasMask: true,
-        align: "cc cc"
-      },
-      _react2.default.createElement(
-        "span",
-        { className: "overlay-center" },
-        _react2.default.createElement(_Loading2.default, { color: "#e6e6e6", size: "large", type: "inline" }),
-        _react2.default.createElement(
-          "div",
-          { className: "text" },
-          "\u6B63\u5728\u52A0\u8F7D..."
-        )
-      )
-    );
-  }
-};
-exports.default = LoadingOverlay;
 
 /***/ }),
 
@@ -25867,6 +25204,142 @@ let TopNavigation = class TopNavigation extends _react2.default.Component {
   }
 };
 exports.default = TopNavigation;
+
+/***/ }),
+
+/***/ "./src/components/tools/base64.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Input = __webpack_require__("./node_modules/qnui/lib/Input/index.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _Grid = __webpack_require__("./node_modules/qnui/lib/Grid/index.js");
+
+var _Grid2 = _interopRequireDefault(_Grid);
+
+var _Button = __webpack_require__("./node_modules/qnui/lib/Button/index.js");
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _Icon = __webpack_require__("./node_modules/qnui/lib/Icon/index.js");
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+var _base = __webpack_require__("./src/utils/base64.js");
+
+var base64 = _interopRequireWildcard(_base);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const { Row, Col } = _Grid2.default;
+
+let Base64 = class Base64 extends _react2.default.Component {
+  constructor(...args) {
+    var _temp;
+
+    return _temp = super(...args), this.state = { inputValue: '', outputValue: '' }, this.handleInputChange = (value, e) => this.setState({ inputValue: value }), this.handleOutputChange = (value, e) => this.setState({ outputValue: value }), this.handleEncode = e => {
+      e.preventDefault();
+      let outputValue = base64.encode(this.state.inputValue);
+      this.setState({ outputValue: outputValue });
+    }, this.handleDecode = e => {
+      e.preventDefault();
+      let outputValue = base64.decode(this.state.inputValue);
+      this.setState({ outputValue: outputValue });
+    }, this.handleClear = e => {
+      e.preventDefault();
+      this.setState({ inputValue: '', outputValue: '' });
+    }, _temp;
+  }
+
+  render() {
+    const { inputValue, outputValue } = this.state;
+    return _react2.default.createElement(
+      'div',
+      { className: 'inner-container' },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h2',
+          null,
+          'BASE64\u7F16\u7801'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          '\u2003\u2003Base64\u7F16\u7801\u8981\u6C42\u628A3\u4E2A8\u4F4D\u5B57\u8282\uFF083*8=24\uFF09\u8F6C\u5316\u4E3A4\u4E2A6\u4F4D\u7684\u5B57\u8282\uFF084*6=24\uFF09\uFF0C\u4E4B\u540E\u57286\u4F4D\u7684\u524D\u9762\u8865\u4E24\u4E2A0\uFF0C\u5F62\u62108\u4F4D\u4E00\u4E2A\u5B57\u8282\u7684\u5F62\u5F0F\u3002 \u5982\u679C\u5269\u4E0B\u7684\u5B57\u7B26\u4E0D\u8DB33\u4E2A\u5B57\u8282\uFF0C\u5219\u75280\u586B\u5145\uFF0C\u8F93\u51FA\u5B57\u7B26\u4F7F\u7528\u2018=\u2019\uFF0C\u56E0\u6B64\u7F16\u7801\u540E\u8F93\u51FA\u7684\u6587\u672C\u672B\u5C3E\u53EF\u80FD\u4F1A\u51FA\u73B01\u62162\u4E2A\u2018=\u2019\u3002'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          '\u2003\u2003\u4E3A\u4E86\u4FDD\u8BC1\u6240\u8F93\u51FA\u7684\u7F16\u7801\u4F4D\u53EF\u8BFB\u5B57\u7B26\uFF0CBase64\u5236\u5B9A\u4E86\u4E00\u4E2A\u7F16\u7801\u8868\uFF0C\u4EE5\u4FBF\u8FDB\u884C\u7EDF\u4E00\u8F6C\u6362\u3002\u7F16\u7801\u8868\u7684\u5927\u5C0F\u4E3A2^6=64\uFF0C\u8FD9\u4E5F\u662FBase64\u540D\u79F0\u7684\u7531\u6765\u3002'
+        )
+      ),
+      _react2.default.createElement('hr', null),
+      _react2.default.createElement(
+        'div',
+        { className: 'inner-wrapper' },
+        _react2.default.createElement(
+          Row,
+          null,
+          _react2.default.createElement(
+            Col,
+            { span: '12' },
+            _react2.default.createElement(_Input2.default, { multiple: true, rows: 10, style: { width: '100%' }, placeholder: '\u8BF7\u8F93\u5165...', value: inputValue, onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement(
+            Col,
+            { span: '12' },
+            _react2.default.createElement(_Input2.default, { multiple: true, rows: 10, style: { width: '100%' }, placeholder: '\u8F6C\u6362\u7ED3\u679C', value: outputValue, onChange: this.handleOutputChange })
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'inner-wrapper' },
+        _react2.default.createElement(
+          Row,
+          null,
+          '\u2003',
+          _react2.default.createElement(
+            _Button2.default,
+            { type: 'primary', onClick: this.handleEncode },
+            'BASE64\u7F16\u7801'
+          ),
+          '\u2003',
+          _react2.default.createElement(
+            _Button2.default,
+            { type: 'primary', onClick: this.handleDecode },
+            'BASE64\u89E3\u7801'
+          ),
+          '\u2003',
+          _react2.default.createElement(
+            _Button2.default,
+            { shape: 'warning', onClick: this.handleClear },
+            _react2.default.createElement(_Icon2.default, { type: 'ashbin' }),
+            '\u6E05\u7A7A'
+          )
+        )
+      )
+    );
+  }
+
+};
+exports.default = Base64;
 
 /***/ }),
 
@@ -26053,7 +25526,7 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/index.js":
+/***/ "./src/index.dev.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26079,11 +25552,13 @@ var _stores = __webpack_require__("./src/stores/index.js");
 
 var _stores2 = _interopRequireDefault(_stores);
 
-var _App = __webpack_require__("./src/components/App.jsx");
+var _App = __webpack_require__("./src/components/App.dev.jsx");
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+if (true) var DevTools = __webpack_require__("./node_modules/mobx-react-devtools/index.js").default;
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactHotLoader.AppContainer,
@@ -26103,6 +25578,51 @@ _reactDom2.default.render(_react2.default.createElement(
 if (true) {
   module.hot.accept();
 }
+
+/***/ }),
+
+/***/ "./src/routes.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.route = exports.routes = undefined;
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+
+var _List = __webpack_require__("./src/components/hashparam/List.jsx");
+
+var _List2 = _interopRequireDefault(_List);
+
+var _List3 = __webpack_require__("./src/components/complexparam/List.jsx");
+
+var _List4 = _interopRequireDefault(_List3);
+
+var _Index = __webpack_require__("./src/components/image/Index.jsx");
+
+var _Index2 = _interopRequireDefault(_Index);
+
+var _unicode = __webpack_require__("./src/components/tools/unicode.jsx");
+
+var _unicode2 = _interopRequireDefault(_unicode);
+
+var _base = __webpack_require__("./src/components/tools/base64.jsx");
+
+var _base2 = _interopRequireDefault(_base);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const routes = exports.routes = [{ path: "/", key: "1-0", name: "参数管理", icon: "text", parent: false }, { path: "/Params/Hash", key: "1-0-1", name: "哈希参数", parent: "1-0" }, { path: "/Params/Complex", key: "1-0-2", name: "复合参数", parent: "1-0" }, { path: "/Content/Image", key: "2-0", name: "内容管理", icon: "image-text", parent: false }, { path: "/Content/Image", key: "2-0-1", name: "图片管理", parent: "2-0" }, { path: "/tools/unicode", key: "3-0", name: "开发工具", icon: "box", parent: false }, { path: "/tools/unicode", key: "3-0-1", name: "编码解码", parent: "3-0", isMenu: true }, { path: "/tools/unicode", key: "3-0-1-1", name: "Unicode中文转换", parent: "3-0-1" }, { path: "/tools/base64", key: "3-0-1-2", name: "BASE64", parent: "3-0-1" }];
+//菜单
+const route = exports.route = [_react2.default.createElement(_reactRouterDom.Route, { key: '/', exact: true, path: '/', component: _List2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: '/Params/Hash', path: '/Params/Hash', component: _List2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: '/Params/Complex', path: '/Params/Complex', component: _List4.default }), _react2.default.createElement(_reactRouterDom.Route, { key: '/Content/Image', path: '/Content/Image', component: _Index2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: '/tools/unicode', path: '/tools/unicode', component: _unicode2.default }), _react2.default.createElement(_reactRouterDom.Route, { key: '/tools/base64', path: '/tools/base64', component: _base2.default })];
 
 /***/ }),
 
@@ -26574,6 +26094,95 @@ exports.default = {
 
 /***/ }),
 
+/***/ "./src/utils/base64.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.encode = encode;
+exports.decode = decode;
+const map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+function encode(s) {
+    if (!s) {
+        return;
+    }
+    s += '';
+    if (s.length === 0) {
+        return s;
+    }
+    s = escape(s);
+
+    var i,
+        b,
+        x = [],
+        padchar = map[64];
+    var len = s.length - s.length % 3;
+
+    for (i = 0; i < len; i += 3) {
+        b = s.charCodeAt(i) << 16 | s.charCodeAt(i + 1) << 8 | s.charCodeAt(i + 2);
+        x.push(map.charAt(b >> 18));
+        x.push(map.charAt(b >> 12 & 0x3f));
+        x.push(map.charAt(b >> 6 & 0x3f));
+        x.push(map.charAt(b & 0x3f));
+    }
+
+    switch (s.length - len) {
+        case 1:
+            b = s.charCodeAt(i) << 16;
+            x.push(map.charAt(b >> 18) + map.charAt(b >> 12 & 0x3f) + padchar + padchar);
+            break;
+        case 2:
+            b = s.charCodeAt(i) << 16 | s.charCodeAt(i + 1) << 8;
+            x.push(map.charAt(b >> 18) + map.charAt(b >> 12 & 0x3f) + map.charAt(b >> 6 & 0x3f) + padchar);
+            break;
+    }
+    return x.join('');
+}
+
+function decode(s) {
+    s += '';
+    var len = s.length;
+    if (len === 0 || len % 4 !== 0) {
+        return s;
+    }
+
+    var pads = 0;
+    if (s.charAt(len - 1) === map[64]) {
+        pads++;
+        if (s.charAt(len - 2) === map[64]) {
+            pads++;
+        }
+        len -= 4;
+    }
+
+    var i,
+        b,
+        x = [];
+    for (i = 0; i < len; i += 4) {
+        b = map.indexOf(s.charAt(i)) << 18 | map.indexOf(s.charAt(i + 1)) << 12 | map.indexOf(s.charAt(i + 2)) << 6 | map.indexOf(s.charAt(i + 3));
+        x.push(String.fromCharCode(b >> 16, b >> 8 & 0xff, b & 0xff));
+    }
+
+    switch (pads) {
+        case 1:
+            b = map.indexOf(s.charAt(i)) << 18 | map.indexOf(s.charAt(i)) << 12 | map.indexOf(s.charAt(i)) << 6;
+            x.push(String.fromCharCode(b >> 16, b >> 8 & 0xff));
+            break;
+        case 2:
+            b = map.indexOf(s.charAt(i)) << 18 | map.indexOf(s.charAt(i)) << 12;
+            x.push(String.fromCharCode(b >> 16));
+            break;
+    }
+    return unescape(x.join(''));
+}
+
+/***/ }),
+
 /***/ "./src/utils/mobxhelper.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26648,5 +26257,5 @@ module.exports.get = url => fetch(url, {
 
 /***/ })
 
-},["./src/index.js"]);
-//# sourceMappingURL=bundle.js.map?qntag=3bb1c4f6
+},["./src/index.dev.js"]);
+//# sourceMappingURL=bundle.js.map?qntag=d3a8fe60

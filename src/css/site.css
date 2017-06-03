@@ -70,10 +70,6 @@ body,
     text-align: center;
 }
 
-
-
-/*部件*/
-
 .tab-group {
     position: fixed;
     z-index: 1002;
@@ -123,28 +119,6 @@ body,
     color: #FFF;
     font-size: 24px;
 }
-
-
-
-/*.next-navigation a, .next-navigation a:hover, .next-navigation a:link, .next-navigation a:visited{
-    color: #FFF;
-}*/
-
-
-/*覆盖qnui*/
-
-
-/*.qn-loading-inline {
-    position: relative;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-}
-
-.qn-loading-inline-large {
-    width: 40px;
-    height: 40px;
-}*/
 
 .next-navigation-tree .next-navigation-item-custom-icon:before,
 .next-navigation-tree .next-navigation-item-leaf-icon:before {

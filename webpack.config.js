@@ -3,46 +3,10 @@ var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 
-var debug = process.env.NODE_ENV === "development";
-
-// html注入支持
-var plugins = [new HtmlWebpackPlugin({
-    inject: "body",
-    template: "./src/index.html"
-}), new webpack.DefinePlugin({
-    DEBUG: debug
-}), new webpack.optimize.CommonsChunkPlugin({name: 'vender', filename:'vender.js'})];
-
-if (debug) {
-    plugins.push(
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
-    );
-} else {
-    plugins.push(
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        // new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new CopyWebpackPlugin([{
-            from: path.resolve(__dirname, "dist"),
-            to: path.resolve(__dirname, "public")
-        }], {
-            copyUnmodified: false
-        })
-    );
-}
-
-var vender = ['babel-polyfill', 'react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react', 'mobx-utils', 'react-addons-transition-group', 'moment', 'qnui'];
-if(debug) vender.push('react-hot-loader/patch', 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000');
-
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        vender: vender
+        vender: ['babel-polyfill', 'react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react', 'mobx-utils', 'react-addons-transition-group', 'moment', 'qnui']
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -71,6 +35,28 @@ module.exports = {
             "UTILS": path.resolve(__dirname, "src", "utils"),
         }
     },
-    devtool: debug ? "source-map" : false,
-    plugins: plugins
+    devtool: false,
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: "body",
+            template: "./src/index.html"
+        }),
+        new webpack.DefinePlugin({
+            DEBUG: false
+        }),
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vender', filename: 'vender.js' }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
+        // new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new CopyWebpackPlugin([{
+            from: path.resolve(__dirname, "dist"),
+            to: path.resolve(__dirname, "public")
+        }], {
+            copyUnmodified: false
+        })
+    ]
 }

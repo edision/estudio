@@ -7,7 +7,7 @@ import { Navigation, Menu, Icon } from "qnui";
 import TopNavigation from "COMPONENTS/shared/TopNavigation";
 import LeftNavigation from "COMPONENTS/shared/LeftNavigation";
 import BackTop from "COMPONENTS/shared/BackTop";
-
+if (DEBUG) var DevTools = require("mobx-react-devtools").default;
 //
 import { routes, route } from '../routes';
 
@@ -91,6 +91,7 @@ class App extends React.Component {
 
     return (
       <div className="main container">
+        {DEBUG && <DevTools />}
         <header className="header">
           <TopNavigation title="EStudioxx" defaultSelectedKey={this.state.topSelectedKey} items={topItems} />
         </header>

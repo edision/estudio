@@ -12,11 +12,11 @@ import db from './lib/db';
 import hashparam from './routes/hashparam';
 
 // ENVIRONMENT VARIABLES
-const SECRET         = process.env.SECRET           || 'faekkkeee00$';
-const PORT           = process.env.PORT             || 3000;
-const COUCHBASE_URI  = process.env.COUCHBASE_URI    || 'couchbase://127.0.0.1';
+const SECRET = process.env.SECRET || 'faekkkeee00$';
+const PORT = process.env.PORT || 3000;
+const COUCHBASE_URI = process.env.COUCHBASE_URI || 'couchbase://127.0.0.1';
 const COUCHBASE_BUCK = process.env.COUCHBASE_BUCKET || 'default';
-const PASSWORD       = process.env.PASSWORD         || 'superfakepassword';
+const PASSWORD = process.env.PASSWORD || 'superfakepassword';
 
 const app = new Koa();
 app.proxy = true; //允许代理连接
@@ -55,7 +55,7 @@ if (isDev) {
     // 加载webpack中间件及配置
     console.log("配置开发环境...");
     const webpackMiddleware = require("koa-webpack");
-    const config = require("./webpack.config");
+    const config = require("./webpack.config.dev");
     // const webpack = require("webpack");
     app.use(webpackMiddleware({
         config: config,
@@ -84,7 +84,7 @@ app.listen(PORT, function() {
     console.log(`Web服务器已启动。访问地址: http://localhost:${PORT}`);
 });
 
-process.addListener('error', function(err){
+process.addListener('error', function(err) {
     console.error(err);
 });
 
