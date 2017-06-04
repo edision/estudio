@@ -5,6 +5,7 @@ import logger from 'koa-logger';
 import responseTime from 'koa-response-time';
 import convert from 'koa-convert';
 import session from 'koa-generic-session';
+import compress from 'koa-compress';
 
 import path from 'path';
 
@@ -29,6 +30,15 @@ app.use(logger());
 // SESSION
 app.keys = [SECRET];
 app.use(convert(session()))
+
+// compress
+app.use(compress({
+    filter: function(contentType) {
+        return /text|javascript/i.test(contentType);
+    },
+    threshold: 2048,
+    flush: require('zlib').Z_SYNC_FLUSH
+}));
 
 // BODY-PARSER
 app.use(body({
@@ -72,7 +82,7 @@ if (isDev) {
     // 生产环境中间件
     const favicon = require("koa-favicon");
     const serve = require("koa-static");
-    app.use(favicon(path.join(__dirname, "/public")));
+    app.use(favicon(path.join(__dirname, "/public/favicon.ico")));
     app.use(serve(path.join(__dirname, "/public")));
     // 路由
     app.use(hashparam.routes());
