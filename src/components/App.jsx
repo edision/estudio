@@ -92,7 +92,7 @@ class App extends React.Component {
     return (
       <div className="main container">
         <header className="header">
-          <TopNavigation title="EStudioxx" defaultSelectedKey={this.state.topSelectedKey} items={topItems} />
+          <TopNavigation title="EStudio" defaultSelectedKey={this.state.topSelectedKey} items={topItems} />
         </header>
         <div className="main-container" onScroll={this.handleScroll}>
           <aside className="sidebar-container">

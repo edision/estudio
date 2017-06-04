@@ -1,4 +1,4 @@
-import db from '../models';
+import service from '../services/hashparamservice';
 
 class SysHashParamController {
     create = async(ctx, next) => {
@@ -11,7 +11,7 @@ class SysHashParamController {
                 updateDt: Date.now()
             };
             console.log(entry)
-            const result = await db.SysHashParam.create(entry);
+            const result = await service.add(entry);
             ctx.body = { isOk: true, result };
         } catch (err) {
             console.error(err)
@@ -23,39 +23,24 @@ class SysHashParamController {
         const data = ctx.request.body;
         console.log('更新哈希参数-->', data);
         await next();
-        try {
-            await db.SysHashParam.update({ _id: data._id }, data);
-            ctx.body = { isOk: true }
-        } catch (error) {
-            console.error(error)
-            ctx.body = { isOk: false }
-        }
+        const result = await service.update(data);
+        ctx.body = { isOk: result };
     }
 
     remove = async(ctx, next) => {
         const id = ctx.params.id;
         console.log(`删除哈希参数: _id=${id}`);
         await next();
-        try {
-            await db.SysHashParam.findByIdAndRemove(id);
-            ctx.body = { isOk: true }
-        } catch (error) {
-            console.error(error)
-            ctx.body = { isOk: false }
-        }
+        const result = await service.remove(id);
+        ctx.body = { isOk: result };
     }
 
     batchRemove = async(ctx, next) => {
         const ids = ctx.request.body;
         console.log(ids);
         await next();
-        try {
-            await db.SysHashParam.remove({ _id: { $in: ids } });
-            ctx.body = { isOk: true }
-        } catch (error) {
-            console.error(error)
-            ctx.body = { isOk: false }
-        }
+        const result = await service.removeBatch(ids);
+        ctx.body = { isOk: result };
     }
 
     /**
@@ -69,20 +54,7 @@ class SysHashParamController {
         const pageSize = qp.pageSize;
         const filter = qp.filter || '';
 
-        let query = {};
-        if (filter.length > 0) {
-            const reg = { $regex: filter };
-            query.$or = [{ key: reg }, { value: reg }, { desc: reg }];
-        }
-
-        let total = await db.SysHashParam.count();
-        let docs = await db.SysHashParam.find(query).sort({ createDt: 1 }).skip((pageIndex - 1) * pageSize).limit(pageSize);
-        ctx.body = {
-            pageIndex,
-            pageSize,
-            total,
-            data: docs
-        };
+        ctx.body = await service.getParams(pageIndex, pageSize, filter);
     }
 }
 
