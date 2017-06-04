@@ -94,11 +94,11 @@ class List extends React.Component {
   }
 
   renderCellValue = (value, index, record, context) => {
-    return <LongTextWrapper text={record.value} colLen={50}/>  
+    return <LongTextWrapper text={record.value} colLen={50} />
   }
 
   renderCellDesc = (value, index, record, context) => {
-    return <LongTextWrapper text={record.desc} colLen={50}/>    
+    return <LongTextWrapper text={record.desc} colLen={50} />
   }
 
   renderRowOpers = (value, index, record) => {
@@ -109,12 +109,12 @@ class List extends React.Component {
       </Menu>
     );
     const trigger = (
-      <Button type="light">
+      <Button>
         操作 <Icon type="arrow-down" />
       </Button>
     );
     return (
-      <Dropdown trigger={trigger} triggerType="click">{menu}</Dropdown>
+      <Dropdown trigger={trigger} triggerType="hover">{menu}</Dropdown>
     );
   }
 
@@ -142,11 +142,11 @@ class List extends React.Component {
             <Table.Column title="键" dataIndex="key" width={160} />
             <Table.Column title="值" cell={this.renderCellValue} />
             <Table.Column title="描述" cell={this.renderCellDesc} />
-            <Table.Column title="操作" cell={this.renderRowOpers} width={120}/>
+            <Table.Column title="操作" cell={this.renderRowOpers} width={120} />
           </Table>
         </div>
         <div className="inner-wrapper">
-          <Pagination total={total} current={pageIndex} pageSize={pageSize} pageSizeSelector="dropdown" pageSizePosition="end" onChange={this.handlePageChange} onPageSizeChange={this.handlePageSizeChange} />
+          <Pagination total={total} current={pageIndex} pageSize={pageSize} pageSizeList={[10, 20, 50, 100]} pageSizeSelector="dropdown" pageSizePosition="end" onChange={this.handlePageChange} onPageSizeChange={this.handlePageSizeChange} />
         </div>
       </div>
     );

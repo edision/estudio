@@ -6,7 +6,18 @@ var CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        vender: ['babel-polyfill', 'react', 'react-dom', 'react-router-dom', 'mobx', 'mobx-react', 'mobx-utils', 'react-addons-transition-group', 'moment', 'qnui']
+        vender: [
+            'babel-polyfill',
+            'react',
+            'react-dom',
+            'react-router-dom',
+            'mobx',
+            'mobx-react',
+            'mobx-utils',
+            'react-addons-transition-group',
+            'moment',
+            'qnui'
+        ]
     },
     output: {
         path: path.resolve(__dirname, "dist"),
