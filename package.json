@@ -11,7 +11,7 @@
     "author": "edision <boywujch@163.com>",
     "license": "MIT",
     "scripts": {
-        "start:dev": "cross-env NODE_ENV=development nodemon index.js",
+        "start:dev": "start http://localhost:3000&&cross-env NODE_ENV=development nodemon index.js",
         "start": "cross-env node index.js",
         "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.dev.js",
         "build": "cross-env webpack --verbose --config webpack.config.js"
